@@ -49,6 +49,8 @@ class OnyxOptions {
 
   ///The onyx lisense key
   String? lisenseKey;
+
+  ///the onyx layout preferences.
   LayoutPreference layoutPreference;
 
   ///If the raw image is to be returned.
@@ -100,6 +102,7 @@ class OnyxOptions {
   /// The scale factor of the full frame image.
   double? fullFrameScaleFactor;
 
+  ///The Pgm Format Byte Array flag
   bool isPGMFormatByteArrayReturned;
 
   ///If NFIQ metrics are needed.
@@ -108,6 +111,7 @@ class OnyxOptions {
   ///The number to rotate the image by.
   int imageRotation;
 
+  /// Flag determines if the results should be converted to an ISO template.
   bool isConvertToISOTemplate;
 
   ///The reticle angle.
@@ -117,15 +121,35 @@ class OnyxOptions {
   ///The reticle orientation.
   ///This property is overridden by the [reticleAngle] property when it's set.
   ReticleOrientations reticleOrientation;
+
+  ///Flag determines if the 4 finger reticle should be used.
   bool isFourFingerReticleUsed;
+
+  ///Flag determines if a quality check match should be performed.
   bool isPerformQualityCheckMatch;
+
+  ///Determines if the metrics should be uploaded.
   bool isUploadMetrics;
+
+  /// flag determines if only high quality images should be returned.
   bool isOnlyHighQualityImageReturned;
+
+  ///flag determines if an error should be raised for low nfiq5 scores.
   bool isErrorOnNFIQ5Score;
+
+  ///if the shutter sound should be enabled.
   bool isShutterSoundEnabled;
+
+  ///if the 2nd device camera should be used for preview streaming.
   bool isCamera2PreviewStreamingUsed;
+
+  ///the unique id of the user. (null if not avaliable)
   String? uniqueUserId;
+
+  ///the lense focus distance for the 2nd camera.
   double? lensFocusDistanceCamera2;
+
+  ///the thumb scale factor.
   double? thumbScaleFactor;
 
   ///returns the options as a serialized list.

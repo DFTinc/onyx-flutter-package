@@ -1,6 +1,6 @@
 name: onyx_plugin
-description: A new flutter plugin project.
-version: 0.0.2-dev.1
+description: This plugin integrates the onyx fingerprint camera api with flutter..
+version: 0.0.3
 homepage: https://diamondfortress.com/
 
 environment:
