@@ -16,9 +16,10 @@ extension LayoutPreferenceExtension on LayoutPreference {
   }
 }
 
+///the settings for the onyx plugin
 class OnyxOptions {
   OnyxOptions(
-      [this.lisenseKey = "",
+      [this.licenseKey = "",
       this.isRawImageReturned = true,
       this.cropFactor = 1.0,
       this.cropSizeHeight = 512,
@@ -48,7 +49,7 @@ class OnyxOptions {
       this.isCamera2PreviewStreamingUsed = false]);
 
   ///The onyx lisense key
-  String? lisenseKey;
+  String? licenseKey;
 
   ///the onyx layout preferences.
   LayoutPreference layoutPreference;
@@ -155,7 +156,7 @@ class OnyxOptions {
   ///returns the options as a serialized list.
   dynamic toParams() {
     return <String, dynamic>{
-      "licenseKey": lisenseKey,
+      "licenseKey": licenseKey,
       "isReturnRawImage": isRawImageReturned.toString(),
       "isProcessedImageReturned": isProcessedImageReturned.toString(),
       "isEnhancedImageReturned": isEnhancedImageReturned.toString(),
