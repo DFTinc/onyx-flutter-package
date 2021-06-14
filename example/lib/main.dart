@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:onyx_plugin/onyx.dart';
-import 'package:top_snackbar_flutter/custom_snack_bar.dart';
-import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 import 'settings-screen.dart';
 import 'fingerprint-screen.dart';
@@ -24,12 +22,10 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     OnyxCamera.state.addListener(() {
       if (OnyxCamera.state.isError) {
-        showTopSnackBar(
-          appContext,
-          CustomSnackBar.error(
-            message: OnyxCamera.state.resultMessage,
-          ),
+        var snackBar = SnackBar(
+          content: Text(OnyxCamera.state.resultMessage),
         );
+        ScaffoldMessenger.of(appContext).showSnackBar(snackBar);
       }
       if (OnyxCamera.state.status == OnyxStatuses.success) {
         Navigator.of(appContext)
