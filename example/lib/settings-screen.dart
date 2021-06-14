@@ -71,10 +71,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
     return Wrap(children: [
       TextFormField(
           onChanged: (value) {
-            OnyxCamera.options.lisenseKey = value;
+            OnyxCamera.options.licenseKey = value;
           },
           textAlign: TextAlign.center,
-          initialValue: OnyxCamera.options.lisenseKey,
+          initialValue: OnyxCamera.options.licenseKey,
           decoration: InputDecoration(
               labelText: "Onyx license key", hintText: "Onyx license key")),
       ...typesOfPrints(),
