@@ -1,5 +1,6 @@
 part of onyx;
 
+///the onyx results class.
 class OnyxResults {
   OnyxResults._([this.livenessConfidence = 0]);
   OnyxResults._loadResults(MethodCall call, [this.livenessConfidence = 0]) {
@@ -67,6 +68,8 @@ class OnyxResults {
 
   ///pgm Data
   List<Uint8List> pgmData = [];
+
+  ///the fingerprint templates.
   List<OnyxFingerprintTemplate> fingerprintTemplates = [];
 
   ///the full frame image.
@@ -74,10 +77,14 @@ class OnyxResults {
 
   /// The liveness confidence.
   double? livenessConfidence;
+
+  ///the focus quality.
   double? focusQuality;
 
   ///the nfiq scores
   List<int> nfiqScores = [];
+
+  ///the mlp scores for the images.
   List<double> mlpScores = [];
 
   /// if the fingerprints have a match.  null if not checked.

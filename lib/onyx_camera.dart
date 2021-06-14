@@ -4,9 +4,9 @@ part of onyx;
 const MethodChannel _channel =
     const MethodChannel('com.dft.onyx_plugin/methodChannel');
 
-/// the onyx utilities.
+/// the onyx camera utility class.
 class OnyxCamera {
-  /// The current state
+  /// The current state of the onyx camera.
   static final OnyxState _state = new OnyxState._();
 
   ///the fingerprint results.
