@@ -81,3 +81,14 @@ The plugin also needs permission to write to external storage, so in the app's A
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 ```
+
+
+
+### IOS Setup
+
+add camera usage permissions to the apps info.plist file (as seen below).
+
+```xml
+<key>NSCameraUsageDescription</key>
+<string>Capture fingerprint image</string>
+```
