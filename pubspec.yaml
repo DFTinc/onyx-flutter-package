@@ -29,9 +29,10 @@ flutter:
       android:
         package: com.dft.onyx.plugin
         pluginClass: OnyxPlugin
-      ios:
-        pluginClass: OnyxPlugin
-        
+      ios :
+        package: com.dft.onyx.plugin
+        pluginClass: SwiftOnyxPlugin
+
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
