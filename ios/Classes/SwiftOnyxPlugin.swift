@@ -4,18 +4,18 @@ import UIKit
 public class SwiftOnyxPlugin: NSObject, FlutterPlugin {
     
   public static func register(with registrar: FlutterPluginRegistrar) {
-     let onyxConfig: OnyxConfiguration = OnyxConfiguration();
+
     //let channel = FlutterMethodChannel(name: "onyx", binaryMessenger: registrar.messenger()
     let channel = FlutterMethodChannel(name: "com.dft.onyx_plugin/methodChannel", binaryMessenger: registrar.messenger())
    
     let instance = SwiftOnyxPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
-
-  public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
+/*
+   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
     switch (call.method) {
     case "startOnyx":
-        startOnyx();
+       // startOnyx();
         result("Onyx Started")
         break;
         
@@ -30,10 +30,10 @@ public class SwiftOnyxPlugin: NSObject, FlutterPlugin {
     
     
     //
-    func configOnyx(){
+    func configOnyx(call: FlutterMethodCall){
        // let onyxConfig: OnyxConfiguration = OnyxConfiguration();
         let arguments =  call.arguments;
-        onyxConfig = OnyxConfiguration();
+        let onyxConfig = OnyxConfiguration();
         onyxConfig.viewController = self
         onyxConfig.licenseKey = arguments["licenseKey"]
         onyxConfig.returnRawFingerprintImage = false
@@ -50,8 +50,7 @@ public class SwiftOnyxPlugin: NSObject, FlutterPlugin {
         
         let onyx: Onyx = Onyx()
         onyx.doSetup(onyxConfig)
-    }
-    
+        }
     func onyxCallback(configuredOnyx: Onyx?) -> Void {
         NSLog("Onyx Callback");
         DispatchQueue.main.async {
@@ -74,5 +73,5 @@ public class SwiftOnyxPlugin: NSObject, FlutterPlugin {
         NSLog("Onyx Error Callback");
         NSLog(onyxError?.errorMessage ?? "Onyx returned an error");
     }
-    
+    */
 }
