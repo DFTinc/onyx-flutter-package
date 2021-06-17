@@ -1,7 +1,6 @@
 import Flutter
 import UIKit
-import Onyx
-
+import OnyxCamera
 
 public class SwiftOnyxPlugin: NSObject, FlutterPlugin
 {

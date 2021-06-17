@@ -9,15 +9,23 @@
 /* Begin PBXBuildFile section */
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
-		69E2BBB157334942696FB5FB /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A40A90717DFCF039ABD9B6 /* Pods_Runner.framework */; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
+		ED1B1FCEA8B1B3DF042AA150 /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31ECF360E52BECFAE86D777D /* Pods_Runner.framework */; };
 		F6432E51267A37B30095DD64 /* onyx_4f_logo_v2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6432E4E267A37B20095DD64 /* onyx_4f_logo_v2@2x.png */; };
 		F6432E52267A37B30095DD64 /* capture_unet_nn_quant.tflite in Resources */ = {isa = PBXBuildFile; fileRef = F6432E4F267A37B20095DD64 /* capture_unet_nn_quant.tflite */; };
 		F6432E53267A37B30095DD64 /* onyx_4f_logo_v2.png in Resources */ = {isa = PBXBuildFile; fileRef = F6432E50267A37B30095DD64 /* onyx_4f_logo_v2.png */; };
 		F6432E5C267A41CA0095DD64 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F67B1C02267B8F140061F599 /* OnyxCamera in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FD7E4A267B7DF900CE8E90 /* OnyxCamera */; };
+		F67B1C05267B8F7F0061F599 /* onyx_plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F67B1C04267B8F7F0061F599 /* onyx_plugin.framework */; };
+		F67B1C06267B8F7F0061F599 /* onyx_plugin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F67B1C04267B8F7F0061F599 /* onyx_plugin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F67B1C0A267B94DE0061F599 /* TFLTensorFlowLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F67B1C09267B94DE0061F599 /* TFLTensorFlowLite.framework */; };
+		F6FD7E5B267B8BDC00CE8E90 /* onyx-core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FD7E5A267B8BDC00CE8E90 /* onyx-core.framework */; };
+		F6FD7E5C267B8BDC00CE8E90 /* onyx-core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F6FD7E5A267B8BDC00CE8E90 /* onyx-core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F6FD7E5E267B8BE100CE8E90 /* OnyxCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FD7E5D267B8BE100CE8E90 /* OnyxCamera.framework */; };
+		F6FD7E5F267B8BE100CE8E90 /* OnyxCamera.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F6FD7E5D267B8BE100CE8E90 /* OnyxCamera.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,8 +36,21 @@
 			dstSubfolderSpec = 10;
 			files = (
 				F6432E5C267A41CA0095DD64 /* (null) in Embed Frameworks */,
+				F67B1C06267B8F7F0061F599 /* onyx_plugin.framework in Embed Frameworks */,
+				F6FD7E5C267B8BDC00CE8E90 /* onyx-core.framework in Embed Frameworks */,
+				F6FD7E5F267B8BE100CE8E90 /* OnyxCamera.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F67B1C01267B8EEF0061F599 /* Embed PlugIns */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed PlugIns";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -38,6 +59,7 @@
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
 		1555E31E44AE10120E7CADD2 /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
+		31ECF360E52BECFAE86D777D /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
 		49CFD81DF55230DB560C0007 /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
 		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -50,19 +72,21 @@
 		97C146FD1CF9000F007C117D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C1A40A90717DFCF039ABD9B6 /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6432E4E267A37B20095DD64 /* onyx_4f_logo_v2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "onyx_4f_logo_v2@2x.png"; path = "Pods/OnyxCamera/OnyxCamera/Assets/onyx_4f_logo_v2@2x.png"; sourceTree = "<group>"; };
 		F6432E4F267A37B20095DD64 /* capture_unet_nn_quant.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = capture_unet_nn_quant.tflite; path = Pods/OnyxCamera/OnyxCamera/Assets/capture_unet_nn_quant.tflite; sourceTree = "<group>"; };
 		F6432E50267A37B30095DD64 /* onyx_4f_logo_v2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = onyx_4f_logo_v2.png; path = Pods/OnyxCamera/OnyxCamera/Assets/onyx_4f_logo_v2.png; sourceTree = "<group>"; };
-		F6432E55267A41860095DD64 /* onyx_plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = onyx_plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6432E58267A41BC0095DD64 /* OnyxCamera.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = OnyxCamera.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6432E5D267A438E0095DD64 /* onyx_plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = onyx_plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6432E5F267A43940095DD64 /* TFLTensorFlowLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TFLTensorFlowLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6432E62267A64870095DD64 /* onyx_plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = onyx_plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6432E65267A66990095DD64 /* onyx_plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = onyx_plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6432E66267A66990095DD64 /* OnyxCamera.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = OnyxCamera.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6432E6B267A66E20095DD64 /* onyx_plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = onyx_plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6432E6D267A66EC0095DD64 /* TFLTensorFlowLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TFLTensorFlowLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F67B1BFF267B8EEF0061F599 /* OnyxCamera.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = OnyxCamera.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		F67B1C03267B8F220061F599 /* onyx-core */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "onyx-core"; path = "Pods/OnyxCamera/OnyxCamera/Frameworks/onyx-core.framework/Versions/A/onyx-core"; sourceTree = "<group>"; };
+		F67B1C04267B8F7F0061F599 /* onyx_plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = onyx_plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F67B1C09267B94DE0061F599 /* TFLTensorFlowLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TFLTensorFlowLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6FD7E40267B6C8F00CE8E90 /* OnyxCamera */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = OnyxCamera; path = Pods/OnyxCamera/OnyxCamera/Frameworks/OnyxCamera.framework/OnyxCamera; sourceTree = "<group>"; };
+		F6FD7E42267B6C9A00CE8E90 /* onyx-core */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "onyx-core"; path = "Pods/OnyxCamera/OnyxCamera/Frameworks/onyx-core.framework/onyx-core"; sourceTree = "<group>"; };
+		F6FD7E44267B7D6F00CE8E90 /* OnyxCamera.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = OnyxCamera.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6FD7E47267B7D9A00CE8E90 /* onyx_plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = onyx_plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6FD7E4A267B7DF900CE8E90 /* OnyxCamera */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = OnyxCamera; path = Pods/OnyxCamera/OnyxCamera/Frameworks/OnyxCamera.framework/Versions/A/OnyxCamera; sourceTree = "<group>"; };
+		F6FD7E56267B84E300CE8E90 /* onyx_plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = onyx_plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6FD7E5A267B8BDC00CE8E90 /* onyx-core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "onyx-core.framework"; path = "Pods/OnyxCamera/OnyxCamera/Frameworks/onyx-core.framework"; sourceTree = "<group>"; };
+		F6FD7E5D267B8BE100CE8E90 /* OnyxCamera.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OnyxCamera.framework; path = Pods/OnyxCamera/OnyxCamera/Frameworks/OnyxCamera.framework; sourceTree = "<group>"; };
 		F9764771163514846584D3EF /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,7 +95,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69E2BBB157334942696FB5FB /* Pods_Runner.framework in Frameworks */,
+				F67B1C0A267B94DE0061F599 /* TFLTensorFlowLite.framework in Frameworks */,
+				ED1B1FCEA8B1B3DF042AA150 /* Pods_Runner.framework in Frameworks */,
+				F67B1C02267B8F140061F599 /* OnyxCamera in Frameworks */,
+				F67B1C05267B8F7F0061F599 /* onyx_plugin.framework in Frameworks */,
+				F6FD7E5B267B8BDC00CE8E90 /* onyx-core.framework in Frameworks */,
+				F6FD7E5E267B8BE100CE8E90 /* OnyxCamera.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +128,7 @@
 				97C146F01CF9000F007C117D /* Runner */,
 				97C146EF1CF9000F007C117D /* Products */,
 				B463F33C72405806D0E69B13 /* Pods */,
-				A8063F92DC666BFDA864A6EC /* Frameworks */,
+				9B83EF0CDCCD885BEE8F5881 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,19 +155,22 @@
 			path = Runner;
 			sourceTree = "<group>";
 		};
-		A8063F92DC666BFDA864A6EC /* Frameworks */ = {
+		9B83EF0CDCCD885BEE8F5881 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F6432E6D267A66EC0095DD64 /* TFLTensorFlowLite.framework */,
-				F6432E6B267A66E20095DD64 /* onyx_plugin.framework */,
-				F6432E65267A66990095DD64 /* onyx_plugin.framework */,
-				F6432E66267A66990095DD64 /* OnyxCamera.bundle */,
-				F6432E62267A64870095DD64 /* onyx_plugin.framework */,
-				F6432E5F267A43940095DD64 /* TFLTensorFlowLite.framework */,
-				F6432E5D267A438E0095DD64 /* onyx_plugin.framework */,
-				F6432E58267A41BC0095DD64 /* OnyxCamera.bundle */,
-				F6432E55267A41860095DD64 /* onyx_plugin.framework */,
-				C1A40A90717DFCF039ABD9B6 /* Pods_Runner.framework */,
+				F67B1C09267B94DE0061F599 /* TFLTensorFlowLite.framework */,
+				F67B1C04267B8F7F0061F599 /* onyx_plugin.framework */,
+				F67B1C03267B8F220061F599 /* onyx-core */,
+				F67B1BFF267B8EEF0061F599 /* OnyxCamera.bundle */,
+				F6FD7E5D267B8BE100CE8E90 /* OnyxCamera.framework */,
+				F6FD7E5A267B8BDC00CE8E90 /* onyx-core.framework */,
+				F6FD7E56267B84E300CE8E90 /* onyx_plugin.framework */,
+				F6FD7E4A267B7DF900CE8E90 /* OnyxCamera */,
+				F6FD7E47267B7D9A00CE8E90 /* onyx_plugin.framework */,
+				F6FD7E44267B7D6F00CE8E90 /* OnyxCamera.bundle */,
+				F6FD7E40267B6C8F00CE8E90 /* OnyxCamera */,
+				F6FD7E42267B6C9A00CE8E90 /* onyx-core */,
+				31ECF360E52BECFAE86D777D /* Pods_Runner.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -168,6 +200,7 @@
 				9705A1C41CF9048500538489 /* Embed Frameworks */,
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
 				E9FAF8592477362BD6CC2CC3 /* [CP] Copy Pods Resources */,
+				F67B1C01267B8EEF0061F599 /* Embed PlugIns */,
 			);
 			buildRules = (
 			);
@@ -277,7 +310,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build";
+			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build\n";
 		};
 		E9FAF8592477362BD6CC2CC3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -390,18 +423,32 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = YMPBZ37646;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/OnyxCamera/OnyxCamera/Frameworks",
+				);
 				INFOPLIST_FILE = Runner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/OnyxCamera/OnyxCamera/Frameworks/OnyxCamera.framework",
+					"$(PROJECT_DIR)/Pods/OnyxCamera/OnyxCamera/Frameworks/onyx-core.framework",
+					"$(PROJECT_DIR)/Pods/OnyxCamera/OnyxCamera/Frameworks/OnyxCamera.framework/Versions/A",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dft.onyx.plugin.onyxPluginExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Runner/Runner-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "${SRCROOT}/Runner/Runner-Bridging-Header.h";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 5.0;
+				USER_HEADER_SEARCH_PATHS = "Runner/Runner-Bridging-Header.h";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Profile;
@@ -533,6 +580,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = YMPBZ37646;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -542,8 +590,26 @@
 					"\"${PODS_ROOT}/OnyxCamera/OnyxCamera/Frameworks\"",
 					"\"${PODS_ROOT}/OpenCV\"",
 					"\"${PODS_ROOT}/TensorFlowLiteC/Frameworks\"",
-					"${SRCROOT}",
+					"${SRCROOT}/**",
 					"\"${PODS_ROOT}/OnyxCamera/Frameworks\"",
+					"$(PROJECT_DIR)/Pods/OnyxCamera/OnyxCamera/Frameworks",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/OnyxCamera\"",
+					"\"${PODS_ROOT}/OnyxCamera\"",
+					"${TARGET_BUILD_DIR}/onyx_plugin.framework",
+					"${TARGET_BUILD_DIR}/OnyxCamera.framework",
+				);
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
+					"${inherited}",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/TensorFlowLiteObjC\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/onyx_plugin\"",
+					"\"${PODS_ROOT}/OnyxCamera/OnyxCamera/Frameworks\"",
+					"\"${PODS_ROOT}/OpenCV\"",
+					"\"${PODS_ROOT}/TensorFlowLiteC/Frameworks\"",
+					"${SRCROOT}/**",
+					"\"${PODS_ROOT}/OnyxCamera/Frameworks\"",
+					"$(PROJECT_DIR)/Pods/OnyxCamera/OnyxCamera/Frameworks",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/OnyxCamera\"",
+					"\"${PODS_ROOT}/OnyxCamera\"",
 				);
 				INFOPLIST_FILE = Runner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -551,11 +617,20 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/OnyxCamera/OnyxCamera/Frameworks/OnyxCamera.framework",
+					"$(PROJECT_DIR)/Pods/OnyxCamera/OnyxCamera/Frameworks/onyx-core.framework",
+					"$(PROJECT_DIR)/Pods/OnyxCamera/OnyxCamera/Frameworks/OnyxCamera.framework/Versions/A",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dft.onyx.plugin.onyxPluginExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Runner/Runner-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "${SRCROOT}/Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 5.0;
+				USER_HEADER_SEARCH_PATHS = "Runner/Runner-Bridging-Header.h";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -568,18 +643,32 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = YMPBZ37646;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/OnyxCamera/OnyxCamera/Frameworks",
+				);
 				INFOPLIST_FILE = Runner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/OnyxCamera/OnyxCamera/Frameworks/OnyxCamera.framework",
+					"$(PROJECT_DIR)/Pods/OnyxCamera/OnyxCamera/Frameworks/onyx-core.framework",
+					"$(PROJECT_DIR)/Pods/OnyxCamera/OnyxCamera/Frameworks/OnyxCamera.framework/Versions/A",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dft.onyx.plugin.onyxPluginExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Runner/Runner-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "${SRCROOT}/Runner/Runner-Bridging-Header.h";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 5.0;
+				USER_HEADER_SEARCH_PATHS = "Runner/Runner-Bridging-Header.h";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

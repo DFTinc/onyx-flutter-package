@@ -1,3 +1,4 @@
+#import <Foundation/Foundation.h>
 #import "GeneratedPluginRegistrant.h"
 // These are the base imports needed to bridge Onyx Objective C headers to Swift
 #import <OnyxCamera/Onyx.h>
@@ -18,4 +19,3 @@
 #import <OnyxCamera/OnyxResult.h>
 #import <OnyxCamera/OnyxMatch.h>
 #import <OnyxCamera/ProcessedFingerprint.h>
-
