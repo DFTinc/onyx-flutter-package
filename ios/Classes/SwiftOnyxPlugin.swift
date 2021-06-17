@@ -4,7 +4,7 @@ import UIKit
 public class SwiftOnyxPlugin: NSObject, FlutterPlugin {
     
   public static func register(with registrar: FlutterPluginRegistrar) {
-
+    //let onyx:OnyxConfiguration =  OnyxConfiguration();
     //let channel = FlutterMethodChannel(name: "onyx", binaryMessenger: registrar.messenger()
     let channel = FlutterMethodChannel(name: "com.dft.onyx_plugin/methodChannel", binaryMessenger: registrar.messenger())
    
