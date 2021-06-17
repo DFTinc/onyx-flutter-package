@@ -13,19 +13,10 @@
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
-		ED1B1FCEA8B1B3DF042AA150 /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31ECF360E52BECFAE86D777D /* Pods_Runner.framework */; };
 		F6432E51267A37B30095DD64 /* onyx_4f_logo_v2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6432E4E267A37B20095DD64 /* onyx_4f_logo_v2@2x.png */; };
 		F6432E52267A37B30095DD64 /* capture_unet_nn_quant.tflite in Resources */ = {isa = PBXBuildFile; fileRef = F6432E4F267A37B20095DD64 /* capture_unet_nn_quant.tflite */; };
 		F6432E53267A37B30095DD64 /* onyx_4f_logo_v2.png in Resources */ = {isa = PBXBuildFile; fileRef = F6432E50267A37B30095DD64 /* onyx_4f_logo_v2.png */; };
 		F6432E5C267A41CA0095DD64 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F67B1C02267B8F140061F599 /* OnyxCamera in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FD7E4A267B7DF900CE8E90 /* OnyxCamera */; };
-		F67B1C05267B8F7F0061F599 /* onyx_plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F67B1C04267B8F7F0061F599 /* onyx_plugin.framework */; };
-		F67B1C06267B8F7F0061F599 /* onyx_plugin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F67B1C04267B8F7F0061F599 /* onyx_plugin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F67B1C0A267B94DE0061F599 /* TFLTensorFlowLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F67B1C09267B94DE0061F599 /* TFLTensorFlowLite.framework */; };
-		F6FD7E5B267B8BDC00CE8E90 /* onyx-core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FD7E5A267B8BDC00CE8E90 /* onyx-core.framework */; };
-		F6FD7E5C267B8BDC00CE8E90 /* onyx-core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F6FD7E5A267B8BDC00CE8E90 /* onyx-core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F6FD7E5E267B8BE100CE8E90 /* OnyxCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FD7E5D267B8BE100CE8E90 /* OnyxCamera.framework */; };
-		F6FD7E5F267B8BE100CE8E90 /* OnyxCamera.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F6FD7E5D267B8BE100CE8E90 /* OnyxCamera.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,9 +27,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				F6432E5C267A41CA0095DD64 /* (null) in Embed Frameworks */,
-				F67B1C06267B8F7F0061F599 /* onyx_plugin.framework in Embed Frameworks */,
-				F6FD7E5C267B8BDC00CE8E90 /* onyx-core.framework in Embed Frameworks */,
-				F6FD7E5F267B8BE100CE8E90 /* OnyxCamera.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,12 +83,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F67B1C0A267B94DE0061F599 /* TFLTensorFlowLite.framework in Frameworks */,
-				ED1B1FCEA8B1B3DF042AA150 /* Pods_Runner.framework in Frameworks */,
-				F67B1C02267B8F140061F599 /* OnyxCamera in Frameworks */,
-				F67B1C05267B8F7F0061F599 /* onyx_plugin.framework in Frameworks */,
-				F6FD7E5B267B8BDC00CE8E90 /* onyx-core.framework in Frameworks */,
-				F6FD7E5E267B8BE100CE8E90 /* OnyxCamera.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
