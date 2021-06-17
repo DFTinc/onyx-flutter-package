@@ -7,3 +7,15 @@
 #import <OnyxCamera/OnyxViewController.h>
 #import <OnyxCamera/OnyxEnums.h>
 #import <TFLTensorFlowLite.h>
+#import <OnyxCamera/Capturemetrics.h>
+#import <OnyxCamera/CaptureNetOutputs.h>
+
+#import <OnyxCamera/NetworkReachability.h>
+#import <OnyxCamera/NetworkUtil.h>
+#import <OnyxCamera/NfiqMetrics.h>
+#import <OnyxCamera/OnyxError.h>
+
+#import <OnyxCamera/OnyxResult.h>
+#import <OnyxCamera/OnyxMatch.h>
+#import <OnyxCamera/ProcessedFingerprint.h>
+
