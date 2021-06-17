@@ -1,8 +1,11 @@
 import Flutter
 import UIKit
+import Onyx
 
-public class SwiftOnyxPlugin: NSObject, FlutterPlugin {
-    
+
+public class SwiftOnyxPlugin: NSObject, FlutterPlugin
+{
+    let onyxConfig = OnyxConfiguration()
   public static func register(with registrar: FlutterPluginRegistrar) {
 
     //let channel = FlutterMethodChannel(name: "onyx", binaryMessenger: registrar.messenger()
@@ -11,14 +14,14 @@ public class SwiftOnyxPlugin: NSObject, FlutterPlugin {
     let instance = SwiftOnyxPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
-/*
+
    public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
     switch (call.method) {
     case "startOnyx":
        // startOnyx();
         result("Onyx Started")
         break;
-        
+
     case "configureOnyx":
         result("Onyx configured")
          configOnyx(call);
@@ -27,13 +30,13 @@ public class SwiftOnyxPlugin: NSObject, FlutterPlugin {
         result(" Not implemented")
     }
   }
-    
-    
+
+
     //
-    func configOnyx(call: FlutterMethodCall){
+    func configOnyx(_ call: FlutterMethodCall){
        // let onyxConfig: OnyxConfiguration = OnyxConfiguration();
         let arguments =  call.arguments;
-        let onyxConfig = OnyxConfiguration();
+        onyxConfig = OnyxConfiguration();
         onyxConfig.viewController = self
         onyxConfig.licenseKey = arguments["licenseKey"]
         onyxConfig.returnRawFingerprintImage = false
@@ -47,7 +50,7 @@ public class SwiftOnyxPlugin: NSObject, FlutterPlugin {
         onyxConfig.onyxCallback = onyxCallback
         onyxConfig.successCallback = onyxSuccessCallback
         onyxConfig.errorCallback = onyxErrorCallback
-        
+
         let onyx: Onyx = Onyx()
         onyx.doSetup(onyxConfig)
         }
@@ -57,21 +60,22 @@ public class SwiftOnyxPlugin: NSObject, FlutterPlugin {
             configuredOnyx?.capture(self);
         }
     }
-    
+
     func startOnyx() {
          NSLog(" :::startOnyx");
        DispatchQueue.main.async {
                    configuredOnyx?.capture(self);
                }
     }
-    
+
     func onyxSuccessCallback(onyxResult: OnyxResult?) -> Void {
         NSLog("Onyx Success Callback");
     }
-    
+
     func onyxErrorCallback(onyxError: OnyxError?) -> Void {
         NSLog("Onyx Error Callback");
         NSLog(onyxError?.errorMessage ?? "Onyx returned an error");
     }
-    */
+
+
 }
