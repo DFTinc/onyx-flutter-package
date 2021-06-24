@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		12D8C9D92681112A001C6A2F /* capture_unet_nn_quant.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 12D8C9D72681112A001C6A2F /* capture_unet_nn_quant.tflite */; };
-		12D8C9DC26811143001C6A2F /* onyx_4f_logo_v2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D8C9DA26811143001C6A2F /* onyx_4f_logo_v2@2x.png */; };
-		12D8C9DD26811143001C6A2F /* onyx_4f_logo_v2.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D8C9DB26811143001C6A2F /* onyx_4f_logo_v2.png */; };
+		12D8C9E92683C079001C6A2F /* capture_unet_nn_quant.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 12D8C9E62683C079001C6A2F /* capture_unet_nn_quant.tflite */; };
+		12D8C9EA2683C079001C6A2F /* onyx_4f_logo_v2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D8C9E72683C079001C6A2F /* onyx_4f_logo_v2@2x.png */; };
+		12D8C9EB2683C079001C6A2F /* onyx_4f_logo_v2.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D8C9E82683C079001C6A2F /* onyx_4f_logo_v2.png */; };
+		12D8C9F82683E27C001C6A2F /* too_far.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D8C9F22683E27C001C6A2F /* too_far.png */; };
+		12D8C9F92683E27C001C6A2F /* white_onyx_embossed.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D8C9F32683E27C001C6A2F /* white_onyx_embossed.png */; };
+		12D8C9FA2683E27C001C6A2F /* capture_unet_class_map.json in Resources */ = {isa = PBXBuildFile; fileRef = 12D8C9F42683E27C001C6A2F /* capture_unet_class_map.json */; };
+		12D8C9FB2683E27C001C6A2F /* capture.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D8C9F52683E27C001C6A2F /* capture.png */; };
+		12D8C9FC2683E27C001C6A2F /* onyx_4f_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D8C9F62683E27C001C6A2F /* onyx_4f_logo.png */; };
+		12D8C9FD2683E27C001C6A2F /* too_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D8C9F72683E27C001C6A2F /* too_close.png */; };
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
 		978B8F6F1D3862AE00F588F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFFD8EE1D35381100E5BB4D /* AppDelegate.m */; };
@@ -17,7 +23,7 @@
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
-		A51A7B9655721F0A6A2E4B4A /* libPods-Runner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2E3D527E980D08E86995E1 /* libPods-Runner.a */; };
+		B2309534D71782567330D152 /* libPods-Runner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7516CE1E6652B0D0A23FC56D /* libPods-Runner.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,10 +44,19 @@
 		12D8C9D72681112A001C6A2F /* capture_unet_nn_quant.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = capture_unet_nn_quant.tflite; path = Pods/OnyxCamera/OnyxCamera/Assets/capture_unet_nn_quant.tflite; sourceTree = "<group>"; };
 		12D8C9DA26811143001C6A2F /* onyx_4f_logo_v2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "onyx_4f_logo_v2@2x.png"; path = "Pods/OnyxCamera/OnyxCamera/Assets/onyx_4f_logo_v2@2x.png"; sourceTree = "<group>"; };
 		12D8C9DB26811143001C6A2F /* onyx_4f_logo_v2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = onyx_4f_logo_v2.png; path = Pods/OnyxCamera/OnyxCamera/Assets/onyx_4f_logo_v2.png; sourceTree = "<group>"; };
+		12D8C9E62683C079001C6A2F /* capture_unet_nn_quant.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = capture_unet_nn_quant.tflite; path = Pods/OnyxCamera/OnyxCamera/Assets/capture_unet_nn_quant.tflite; sourceTree = "<group>"; };
+		12D8C9E72683C079001C6A2F /* onyx_4f_logo_v2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "onyx_4f_logo_v2@2x.png"; path = "Pods/OnyxCamera/OnyxCamera/Assets/onyx_4f_logo_v2@2x.png"; sourceTree = "<group>"; };
+		12D8C9E82683C079001C6A2F /* onyx_4f_logo_v2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = onyx_4f_logo_v2.png; path = Pods/OnyxCamera/OnyxCamera/Assets/onyx_4f_logo_v2.png; sourceTree = "<group>"; };
+		12D8C9F22683E27C001C6A2F /* too_far.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = too_far.png; path = Pods/OnyxCamera/OnyxCamera/Assets/too_far.png; sourceTree = "<group>"; };
+		12D8C9F32683E27C001C6A2F /* white_onyx_embossed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = white_onyx_embossed.png; path = Pods/OnyxCamera/OnyxCamera/Assets/white_onyx_embossed.png; sourceTree = "<group>"; };
+		12D8C9F42683E27C001C6A2F /* capture_unet_class_map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = capture_unet_class_map.json; path = Pods/OnyxCamera/OnyxCamera/Assets/capture_unet_class_map.json; sourceTree = "<group>"; };
+		12D8C9F52683E27C001C6A2F /* capture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = capture.png; path = Pods/OnyxCamera/OnyxCamera/Assets/capture.png; sourceTree = "<group>"; };
+		12D8C9F62683E27C001C6A2F /* onyx_4f_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = onyx_4f_logo.png; path = Pods/OnyxCamera/OnyxCamera/Assets/onyx_4f_logo.png; sourceTree = "<group>"; };
+		12D8C9F72683E27C001C6A2F /* too_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = too_close.png; path = Pods/OnyxCamera/OnyxCamera/Assets/too_close.png; sourceTree = "<group>"; };
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
-		1D2E3D527E980D08E86995E1 /* libPods-Runner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Runner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
+		7516CE1E6652B0D0A23FC56D /* libPods-Runner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Runner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Flutter/Release.xcconfig; sourceTree = "<group>"; };
 		7AFFD8ED1D35381100E5BB4D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7AFFD8EE1D35381100E5BB4D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -63,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A51A7B9655721F0A6A2E4B4A /* libPods-Runner.a in Frameworks */,
+				B2309534D71782567330D152 /* libPods-Runner.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,8 +99,17 @@
 		97C146E51CF9000F007C117D = {
 			isa = PBXGroup;
 			children = (
+				12D8C9F42683E27C001C6A2F /* capture_unet_class_map.json */,
+				12D8C9F52683E27C001C6A2F /* capture.png */,
+				12D8C9F62683E27C001C6A2F /* onyx_4f_logo.png */,
+				12D8C9F72683E27C001C6A2F /* too_close.png */,
+				12D8C9F22683E27C001C6A2F /* too_far.png */,
+				12D8C9F32683E27C001C6A2F /* white_onyx_embossed.png */,
 				12D8C9DB26811143001C6A2F /* onyx_4f_logo_v2.png */,
+				12D8C9E82683C079001C6A2F /* onyx_4f_logo_v2.png */,
 				12D8C9DA26811143001C6A2F /* onyx_4f_logo_v2@2x.png */,
+				12D8C9E62683C079001C6A2F /* capture_unet_nn_quant.tflite */,
+				12D8C9E72683C079001C6A2F /* onyx_4f_logo_v2@2x.png */,
 				12D8C9D62681112A001C6A2F /* capture_unet_class_map.json */,
 				12D8C9D72681112A001C6A2F /* capture_unet_nn_quant.tflite */,
 				9740EEB11CF90186004384FC /* Flutter */,
@@ -131,7 +155,7 @@
 		B602D779A809A7E9075F4272 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1D2E3D527E980D08E86995E1 /* libPods-Runner.a */,
+				7516CE1E6652B0D0A23FC56D /* libPods-Runner.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -177,7 +201,7 @@
 		97C146E61CF9000F007C117D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					97C146ED1CF9000F007C117D = {
@@ -208,9 +232,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12D8C9DC26811143001C6A2F /* onyx_4f_logo_v2@2x.png in Resources */,
-				12D8C9DD26811143001C6A2F /* onyx_4f_logo_v2.png in Resources */,
-				12D8C9D92681112A001C6A2F /* capture_unet_nn_quant.tflite in Resources */,
+				12D8C9F82683E27C001C6A2F /* too_far.png in Resources */,
+				12D8C9F92683E27C001C6A2F /* white_onyx_embossed.png in Resources */,
+				12D8C9FA2683E27C001C6A2F /* capture_unet_class_map.json in Resources */,
+				12D8C9FB2683E27C001C6A2F /* capture.png in Resources */,
+				12D8C9FC2683E27C001C6A2F /* onyx_4f_logo.png in Resources */,
+				12D8C9FD2683E27C001C6A2F /* too_close.png in Resources */,
+				12D8C9E92683C079001C6A2F /* capture_unet_nn_quant.tflite in Resources */,
+				12D8C9EA2683C079001C6A2F /* onyx_4f_logo_v2@2x.png in Resources */,
+				12D8C9EB2683C079001C6A2F /* onyx_4f_logo_v2.png in Resources */,
 				97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */,
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
@@ -346,6 +376,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -354,6 +385,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -364,10 +396,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -416,6 +448,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -424,6 +457,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -440,9 +474,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -471,6 +505,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -479,6 +514,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -489,10 +525,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

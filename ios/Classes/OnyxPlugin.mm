@@ -1,5 +1,5 @@
 #import "OnyxPlugin.h"
-
+#import "OnyxCameraPluginViewController.h"
 
 
 @implementation OnyxPlugin
@@ -26,22 +26,94 @@
       while (parentViewController.presentedViewController != nil){
           parentViewController = parentViewController.presentedViewController;
       }
-      
+    //  OnyxCameraPluginViewController *onyxCameraPluginViewController= [[OnyxCameraPluginViewController alloc] init];
      OnyxConfigurationBuilder* onyxConfigBuilder = [[OnyxConfigurationBuilder alloc] init];
      onyxConfigBuilder.setViewController(parentViewController)
        .setLicenseKey(call.arguments[@"licenseKey"])
       .setReturnRawImage([call.arguments[@"isReturnRawImage"] boolValue])
         .setReturnProcessedImage([call.arguments[@"isProcessedImageReturned"] boolValue])
         .setReturnWSQ([call.arguments[@"isWSQImageReturned"] boolValue])
-        .setReturnFingerprintTemplate([call.arguments[@"isWSQImageReturned"] boolValue])
-        .setReturnISOFingerprintTemplate([call.arguments[@"isFingerprintTemplateImageReturned"] boolValue])
+        .setReturnFingerprintTemplate([call.arguments[@"isFingerprintTemplateImageReturned"] boolValue])
+        .setReturnISOFingerprintTemplate([call.arguments[@"isConvertToISOTemplate"] boolValue])
       .setUseOnyxLive([call.arguments[@"isOnyxLive"] boolValue])
-      //  .setReticleOrientation(ReticleOrientation.Left)
-        .setShowLoadingSpinner(YES)
+        .setReticleOrientation((ReticleOrientation)0)
+        .setShowLoadingSpinner([call.arguments[@"isLoadingSpinnerShown"] boolValue])
       
         .setSuccessCallback([self onyxSuccessCallback])
         .setErrorCallback([self onyxErrorCallback])
         .setOnyxCallback([self onyxCallback]);
+
+         /*
+     * Legacy params
+     *
+     * NOTE: subject of change
+     */
+onyxConfigBuilder
+    //.setReturnGrayRawImage(_returnGrayRawImage.on)
+    .setReturnEnhancedImage([call.arguments[@"isEnhancedImageReturned"] boolValue])
+      
+    //.setReturnBlackWhiteProcessedImage(_returnBlackWhiteProcessedImage.on)
+    //.setReturnGrayRawWSQ(_returnGrayRawWsq.on)
+    .setUseFlash(YES)
+    .setUseManualCapture([call.arguments[@"isManualCapture"] boolValue])
+    //.setShowManualCaptureText(_showManualCaptureText.on)
+      .setImageRotation((ImageRotation)[call.arguments[@"imageRotation"] intValue]);
+    //.setFingerDetectMode((FingerDetectMode)_fingerDetectMode.selectedSegmentIndex)
+    
+//    if (![_backgroundColorHexString.text isEqualToString:@""]) {
+//        onyxConfigBuilder.setBackgroundColorHexString([NSString stringWithFormat:@"#%@", _backgroundColorHexString.text]);
+//    }
+//
+//    if (![_backButtonText.text isEqualToString:@""]) {
+//        onyxConfigBuilder.setBackButtonText(_backButtonText.text);
+//    }
+//
+//    if (![_manualCaptureText.text isEqualToString:@""]) {
+//        onyxConfigBuilder.setManualCaptureText(_manualCaptureText.text);
+//    }
+//
+//    if (![_infoText.text isEqualToString:@""]) {
+//        onyxConfigBuilder.setInfoText(_infoText.text);
+//    }
+//
+//    if (![_infoTextColorHexString.text isEqualToString:@""]) {
+//        onyxConfigBuilder.setInfoTextColorHexString([NSString stringWithFormat:@"#%@", _infoTextColorHexString.text]);
+//    }
+//
+//    if (![_base64ImageData.text isEqualToString:@""]) {
+//        onyxConfigBuilder.setBase64ImageData(_base64ImageData.text);
+//    }
+//
+//    if (![_LEDBrightness.text isEqualToString:@""]) {
+//        onyxConfigBuilder.setLEDBrightness([_LEDBrightness.text floatValue]);
+//    }
+//
+//    // Crop Factor
+    if (![call.arguments[@"cropFactor"] isEqualToString:@""]) {
+        onyxConfigBuilder.setCropFactor([call.arguments[@"cropFactor"] floatValue]);
+    }
+//
+//    // Crop Size
+//    float width = 600;
+//    float height = 960;
+//    float floatValue = 0;
+    if (![call.arguments[@"cropSizeHeight"] isEqualToString:@""] && ![call.arguments[@"cropSizeWidth"] isEqualToString:@""]) {
+        onyxConfigBuilder.setCropSize(CGSizeMake([call.arguments[@"cropSizeWidth"] floatValue], [call.arguments[@"cropSizeHeight"] floatValue]));
+    }
+//        floatValue = [_cropSizeWidth.text floatValue];
+//        if (floatValue != 0) {
+//            width = floatValue;
+//        }
+//    }
+//    if (![_cropSizeHeight.text isEqualToString:@""]) {
+//        floatValue = [_cropSizeHeight.text floatValue];
+//        if (floatValue != 0) {
+//            height = floatValue;
+//        }
+//    }
+//
+//    onyxConfigBuilder.setCropSize(CGSizeMake(width, height));
+
          [onyxConfigBuilder buildOnyxConfiguration];
 
   }
@@ -65,6 +137,11 @@
             while (parentViewController.presentedViewController != nil){
                 parentViewController = parentViewController.presentedViewController;
             }
+         //   [parentViewController performSegueWithIdentifier:@"segueToOnyxResult" sender:configuredOnyx];
+          //  [configuredOnyx capture:parentViewController];
+          //  OnyxCameraPluginViewController *onyxCameraPluginViewController= [[OnyxCameraPluginViewController alloc] init];
+         //   onyxCameraPluginViewController.configuredOnyx=configuredOnyx;
+           // [parentViewController showViewController:onyxCameraPluginViewController sender:configuredOnyx];
             [configuredOnyx capture:parentViewController];
         });
 
@@ -107,7 +184,6 @@
              //                   handler:nil];
 
          //   [alertController addAction:okAction];
-
          //   [self presentViewController:alertController animated:YES completion:nil];
         });
             

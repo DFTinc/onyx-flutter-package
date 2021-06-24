@@ -16,10 +16,11 @@ A new flutter plugin project.
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
-  s.dependency 'OnyxCamera', '7.0.1'
+  s.dependency 'OnyxCamera', '~> 7.0.1'
   s.platform = :ios, '11.0'
-  #s.frameworks = 'OnyxCamera'
-  s.static_framework = true
+  #s.preserve_paths = 'Frameworks/*.framework'
+  s.frameworks = 'OnyxCamera'
+  #s.static_framework = true
   # Flutter.framework does not contain a i386 slice.
-  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
+#  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
 end

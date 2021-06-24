@@ -19,7 +19,7 @@ extension LayoutPreferenceExtension on LayoutPreference {
 ///the settings for the onyx plugin
 class OnyxOptions {
   OnyxOptions(
-      [this.licenseKey = "",
+      [this.licenseKey = "7318-4496-5417-3-2",
       this.isRawImageReturned = true,
       this.cropFactor = 1.0,
       this.cropSizeHeight = 512,
