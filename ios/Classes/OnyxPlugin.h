@@ -9,8 +9,9 @@
 
 @interface OnyxPlugin : NSObject<FlutterPlugin>
 
-
+//@property FlutterMethodChannel* channel;
 @property OnyxResult* onyxResult;
+@property  Onyx* onyx;
 -(void(^)(OnyxResult* onyxResult))onyxSuccessCallback;
 
 -(void(^)(OnyxError* onyxError)) onyxErrorCallback;
