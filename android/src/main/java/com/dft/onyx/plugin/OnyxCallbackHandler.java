@@ -157,7 +157,7 @@ public class OnyxCallbackHandler implements MethodCallHandler {
                 .setShowLoadingSpinner(OnyxCallbackHelpers.getBoolValue(call, "isLoadingSpinnerShown"))
                 .setUseOnyxLive(OnyxCallbackHelpers.getBoolValue(call, "isOnyxLive"))
                 .setComputeNfiqMetrics(OnyxCallbackHelpers.getBoolValue(call, "isNFIQMetrics"))
-                .setUseFlash(true)
+                .setUseFlash(OnyxCallbackHelpers.getBoolValue(call, "isUseFlash"))
         .setUseFourFingerReticle(OnyxCallbackHelpers.getBoolValue(call, "isFourFingerReticleUsed"))
 
                 

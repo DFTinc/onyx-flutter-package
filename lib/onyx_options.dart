@@ -21,6 +21,7 @@ class OnyxOptions {
   OnyxOptions(
       [this.licenseKey = "",
       this.isRawImageReturned = true,
+      this.isUseFlash = true,
       this.cropFactor = 1.0,
       this.cropSizeHeight = 512,
       this.cropSizeWidth = 300,
@@ -138,6 +139,9 @@ class OnyxOptions {
   ///flag determines if an error should be raised for low nfiq5 scores.
   bool isErrorOnNFIQ5Score;
 
+  ///flag detrmines if the flash should be on by default.
+  bool isUseFlash;
+
   ///if the shutter sound should be enabled.
   bool isShutterSoundEnabled;
 
@@ -192,7 +196,8 @@ class OnyxOptions {
       "isCamera2PreviewStreamingUsed": isCamera2PreviewStreamingUsed.toString(),
       "uniqueUserId": (uniqueUserId ?? ""),
       "lensFocusDistanceCamera2": (lensFocusDistanceCamera2 ?? "").toString(),
-      "thumbScaleFactor": (thumbScaleFactor ?? "").toString()
+      "thumbScaleFactor": (thumbScaleFactor ?? "").toString(),
+      "isUseFlash": isUseFlash.toString()
     };
   }
 }
