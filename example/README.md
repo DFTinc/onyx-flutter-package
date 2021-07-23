@@ -1,6 +1,6 @@
 # Onyx Plugin Example
 
-Demonstrates how to use the Onyx plugin plugin.
+Demonstrates how to use the Onyx plugin.
 
 ## Getting Started
 

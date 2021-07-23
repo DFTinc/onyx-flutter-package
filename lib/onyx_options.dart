@@ -20,6 +20,11 @@ extension LayoutPreferenceExtension on LayoutPreference {
 class OnyxOptions {
   OnyxOptions(
       [this.licenseKey = "",
+      this.isGrayImageReturned = false,
+      this.isBlackWhiteProcessedImageReturned = false,
+      this.isGrayRawWSQReturned = false,
+      this.backButtonText = "",
+      this.base64ImageData = "",
       this.isRawImageReturned = true,
       this.isUseFlash = true,
       this.cropFactor = 1.0,
@@ -49,10 +54,31 @@ class OnyxOptions {
       this.isShutterSoundEnabled = false,
       this.isCamera2PreviewStreamingUsed = false]);
 
-  ///The onyx lisense key
+  ///The onyx license key
   String? licenseKey;
 
+  ///If the gray image should be returned.
+  ///This configuration option is only supported by iOS.
+  bool isGrayImageReturned;
+
+  ///If the black and white processed image should be returned.
+  ///This configuration option is only supported by iOS.
+  bool isBlackWhiteProcessedImageReturned;
+
+  ///If the gray raw WSQ should be returned.
+  ///This configuration option is only supported by iOS.
+  bool isGrayRawWSQReturned;
+
+  ///The text of the back button.
+  ///This configuration option is only supported by iOS.
+  String backButtonText;
+
+  ///sets the image data to be displayed on the capture screen to this base 64 string.
+  ///This configuration option is only supported by iOS.
+  String base64ImageData;
+
   ///the onyx layout preferences.
+  ///This configuration option is only supported by Android.
   LayoutPreference layoutPreference;
 
   ///If the raw image is to be returned.
@@ -74,6 +100,7 @@ class OnyxOptions {
   bool isLoadingSpinnerShown;
 
   ///If the image threshold should be set.
+  ///This configuration option is only supported by Android.
   bool isImageThreshold;
 
   ///The width to crop the image by.
@@ -87,6 +114,7 @@ class OnyxOptions {
 
   ///The targeted pixels per inch.
   ///Suggested values are around 500.0.
+  ///This configuration option is only supported by Android.
   double? targetPPI;
 
   ///If the thumb is captured
@@ -99,15 +127,19 @@ class OnyxOptions {
   bool isOnyxLive;
 
   ///if the full frame image should be returned.
+  ///This configuration option is only supported by Android.
   bool isFullFrameImageReturned;
 
   /// The scale factor of the full frame image.
+  ///This configuration option is only supported by Android.
   double? fullFrameScaleFactor;
 
   ///The Pgm Format Byte Array flag
+  ///This configuration option is only supported by Android.
   bool isPGMFormatByteArrayReturned;
 
   ///If NFIQ metrics are needed.
+  ///This configuration option is only supported by Android.
   bool isNFIQMetrics;
 
   ///The number to rotate the image by.
@@ -125,42 +157,57 @@ class OnyxOptions {
   ReticleOrientations reticleOrientation;
 
   ///Flag determines if the 4 finger reticle should be used.
+  ///This configuration option is only supported by Android.
   bool isFourFingerReticleUsed;
 
   ///Flag determines if a quality check match should be performed.
+  ///This configuration option is only supported by Android.
   bool isPerformQualityCheckMatch;
 
   ///Determines if the metrics should be uploaded.
+  ///This configuration option is only supported by Android.
   bool isUploadMetrics;
 
   /// flag determines if only high quality images should be returned.
+  ///This configuration option is only supported by Android.
   bool isOnlyHighQualityImageReturned;
 
   ///flag determines if an error should be raised for low nfiq5 scores.
+  ///This configuration option is only supported by Android.
   bool isErrorOnNFIQ5Score;
 
   ///flag detrmines if the flash should be on by default.
   bool isUseFlash;
 
   ///if the shutter sound should be enabled.
+  ///This configuration option is only supported by Android.
   bool isShutterSoundEnabled;
 
   ///if the 2nd device camera should be used for preview streaming.
+  ///This configuration option is only supported by Android.
   bool isCamera2PreviewStreamingUsed;
 
-  ///the unique id of the user. (null if not avaliable)
+  ///the unique id of the user. (null if not available)
+  ///This configuration option is only supported by Android.
   String? uniqueUserId;
 
   ///the lense focus distance for the 2nd camera.
+  ///This configuration option is only supported by Android.
   double? lensFocusDistanceCamera2;
 
   ///the thumb scale factor.
+  ///This configuration option is only supported by Android.
   double? thumbScaleFactor;
 
   ///returns the options as a serialized list.
   dynamic toParams() {
     return <String, dynamic>{
       "licenseKey": licenseKey,
+      "isGrayImageReturned": isGrayImageReturned,
+      "isBlackWhiteProcessedImageReturned": isBlackWhiteProcessedImageReturned,
+      "isGrayRawWSQReturned": isGrayRawWSQReturned,
+      "backButtonText": backButtonText,
+      "base64ImageData": base64ImageData,
       "isReturnRawImage": isRawImageReturned.toString(),
       "isProcessedImageReturned": isProcessedImageReturned.toString(),
       "isEnhancedImageReturned": isEnhancedImageReturned.toString(),
