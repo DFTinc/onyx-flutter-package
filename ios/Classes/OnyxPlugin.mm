@@ -25,8 +25,12 @@ static FlutterViewController * _flutterController;
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
     if([@"startOnyx" isEqualToString:call.method]){
-        if(_configuredOnyx != nil){
+        //there are 2 if's, so that attempts to start Onyx with invalid conditions fail gracefully.
+        if(_configuredOnyx != nil && [[self topViewController] isMemberOfClass:[FlutterViewController class]]) {
             [_configuredOnyx capture:_flutterController];
+        }
+        else{
+            NSLog(@"Unable to start onyx.");
         }
     }
     else if ([@"configureOnyx" isEqualToString:call.method]) {
@@ -188,6 +192,26 @@ handles the onyx error callback.
         [returnArray addObject:  UIImagePNGRepresentation(image)];
     }
     return returnArray;
+}
+
+- (UIViewController *)topViewController{
+  return [self topViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
+}
+
+- (UIViewController *)topViewController:(UIViewController *)rootViewController
+{
+  if ([rootViewController isKindOfClass:[UINavigationController class]]) {
+    UINavigationController *navigationController = (UINavigationController *)rootViewController;
+    return [self topViewController:[navigationController.viewControllers lastObject]];
+  }
+  if ([rootViewController isKindOfClass:[UITabBarController class]]) {
+    UITabBarController *tabController = (UITabBarController *)rootViewController;
+    return [self topViewController:tabController.selectedViewController];
+  }
+  if (rootViewController.presentedViewController) {
+    return [self topViewController:rootViewController];
+  }
+  return rootViewController;
 }
 
 @end

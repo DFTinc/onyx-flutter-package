@@ -10,18 +10,22 @@ class OnyxFingerprintTemplate {
     id = finger["customId"];
   }
 
+  OnyxFingerprintTemplate._iOS(dynamic image) {
+    image = image;
+  }
+
   ///the fingerprint image.
   Uint8List? image;
 
   /// the location of the fingerprint.
-  late String location;
+  late String location = "";
 
   ///the nfiq score of the fingerprint.
-  late int nfiqScore;
+  late int nfiqScore = -1;
 
   ///the fingerprint's quality score.
-  late int quality;
+  late int quality = -1;
 
   ///the Id of the fingerprint result.
-  late String id;
+  late String id = "";
 }

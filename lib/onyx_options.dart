@@ -3,7 +3,7 @@ part of 'onyx.dart';
 ///the settings for the onyx plugin
 class OnyxOptions {
   ///The onyx license key
-  String? licenseKey = "7318-4496-5417-3-2";
+  String? licenseKey = "";
 
   ///If the gray image should be returned.
   ///This configuration option is only supported by iOS.
@@ -156,41 +156,43 @@ class OnyxOptions {
       "isGrayRawWSQReturned": isGrayRawWSQReturned,
       "backButtonText": backButtonText,
       "base64ImageData": base64ImageData,
-      "isReturnRawImage": isRawImageReturned,
-      "isProcessedImageReturned": isProcessedImageReturned,
-      "isEnhancedImageReturned": isEnhancedImageReturned,
-      "isWSQImageReturned": isWSQImageReturned,
-      "isFingerprintTemplateImageReturned": isFingerprintTemplateImageReturned,
-      "isLoadingSpinnerShown": isLoadingSpinnerShown,
-      "isImageThreshold": isImageThreshold,
-      "cropSizeWidth": cropSizeWidth,
-      "cropSizeHeight": cropSizeHeight,
+      "isReturnRawImage": isRawImageReturned.toString(),
+      "isProcessedImageReturned": isProcessedImageReturned.toString(),
+      "isEnhancedImageReturned": isEnhancedImageReturned.toString(),
+      "isWSQImageReturned": isWSQImageReturned.toString(),
+      "isFingerprintTemplateImageReturned":
+          isFingerprintTemplateImageReturned.toString(),
+      "isLoadingSpinnerShown": isLoadingSpinnerShown.toString(),
+      "isImageThreshold": isImageThreshold.toString(),
+      "cropSizeWidth": cropSizeWidth.toString(),
+      "cropSizeHeight": cropSizeHeight.toString(),
       "cropFactor": cropFactor.toString(),
       // java doesn't do nullable doubles, and thus -1 indicates that there is no PPI.
       "targetPPI": (targetPPI ?? -1.0).toString(),
-      "isThumbCapture": isThumbCapture,
-      "isManualCapture": isManualCapture,
-      "isOnyxLive": isOnyxLive,
-      "isNFIQMetrics": isNFIQMetrics,
+      "isThumbCapture": isThumbCapture.toString(),
+      "isManualCapture": isManualCapture.toString(),
+      "isOnyxLive": isOnyxLive.toString(),
+      "isNFIQMetrics": isNFIQMetrics.toString(),
       "imageRotation": imageRotation.toString(),
       "reticleAngle": (reticleAngle ?? "").toString(),
       "reticleOrientation": reticleOrientation.toValueString(),
-      "isFullFrameImageReturned": isFullFrameImageReturned,
+      "isFullFrameImageReturned": isFullFrameImageReturned.toString(),
       "FullFrameScaleFactor": (fullFrameScaleFactor ?? "").toString(),
-      "isPGMFormatByteArrayReturned": isPGMFormatByteArrayReturned,
-      "isConvertToISOTemplate": isConvertToISOTemplate,
+      "isPGMFormatByteArrayReturned": isPGMFormatByteArrayReturned.toString(),
+      "isConvertToISOTemplate": isConvertToISOTemplate.toString(),
       "layoutPreference": layoutPreference.toValueString(),
-      "isFourFingerReticleUsed": isFourFingerReticleUsed,
-      "isPerformQualityCheckMatch": isPerformQualityCheckMatch,
-      "isUploadMetrics": isUploadMetrics,
-      "isOnlyHighQualityImageReturned": isOnlyHighQualityImageReturned,
-      "isErrorOnNFIQ5Score": isErrorOnNFIQ5Score,
-      "isShutterSoundEnabled": isShutterSoundEnabled,
-      "isCamera2PreviewStreamingUsed": isCamera2PreviewStreamingUsed,
+      "isFourFingerReticleUsed": isFourFingerReticleUsed.toString(),
+      "isPerformQualityCheckMatch": isPerformQualityCheckMatch.toString(),
+      "isUploadMetrics": isUploadMetrics.toString(),
+      "isOnlyHighQualityImageReturned":
+          isOnlyHighQualityImageReturned.toString(),
+      "isErrorOnNFIQ5Score": isErrorOnNFIQ5Score.toString(),
+      "isShutterSoundEnabled": isShutterSoundEnabled.toString(),
+      "isCamera2PreviewStreamingUsed": isCamera2PreviewStreamingUsed.toString(),
       "uniqueUserId": (uniqueUserId ?? ""),
       "lensFocusDistanceCamera2": (lensFocusDistanceCamera2 ?? "").toString(),
       "thumbScaleFactor": (thumbScaleFactor ?? "").toString(),
-      "isUseFlash": isUseFlash
+      "isUseFlash": isUseFlash.toString()
     };
   }
 }

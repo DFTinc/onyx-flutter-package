@@ -14,6 +14,7 @@
 
 * added use flash as an option
 
-## 1.0.1
+## 7.0.1-dev.1
 
 * added iOS support.
+* adjusted version number to match the onyx version.

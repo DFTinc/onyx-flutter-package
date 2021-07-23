@@ -37,7 +37,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Onyx Plugin Demo',
         home: Builder(builder: (context) {
           appContext = context;
           if (OnyxCamera.state.status == OnyxStatuses.success) {

@@ -36,8 +36,18 @@ class OnyxResults {
       }
     }
     if (call.arguments["fingerprintTemplates"] != null) {
-      for (var image in call.arguments["fingerprintTemplates"]) {
-        fingerprintTemplates.add(OnyxFingerprintTemplate._(image));
+      for (var template in call.arguments["fingerprintTemplates"]) {
+        fingerprintTemplates.add(OnyxFingerprintTemplate._(template));
+      }
+    }
+    if (call.arguments["iosFingerprintTemplates"] != null) {
+      for (var template in call.arguments["iosFingerprintTemplates"]) {
+        fingerprintTemplates.add(OnyxFingerprintTemplate._iOS(template));
+      }
+    }
+    if (call.arguments["iosISOFingerprintTemplates"] != null) {
+      for (var template in call.arguments["iosISOFingerprintTemplates"]) {
+        isoFingerprintTemplates.add(OnyxFingerprintTemplate._iOS(template));
       }
     }
     fullFrameImage = call.arguments["fullFrameImage"];
@@ -82,6 +92,9 @@ class OnyxResults {
 
   ///the fingerprint templates.
   List<OnyxFingerprintTemplate> fingerprintTemplates = [];
+
+  ///the IDO fingerprint templates.
+  List<OnyxFingerprintTemplate> isoFingerprintTemplates = [];
 
   ///the full frame image.
   /// Only returned in Android.
