@@ -1,124 +1,39 @@
 #import "OnyxPlugin.h"
-#import "OnyxCameraPluginViewController.h"
-
+#import <Flutter/Flutter.h>
 
 @implementation OnyxPlugin
 
- static FlutterMethodChannel* channel;
+static FlutterMethodChannel* channel; 
+ Onyx* _configuredOnyx;
 
-
-+ (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
- channel = [FlutterMethodChannel
-      methodChannelWithName:@"com.dft.onyx_plugin/methodChannel"
-            binaryMessenger:[registrar messenger]];
-    OnyxPlugin* instance = [[OnyxPlugin alloc] init];
-  [registrar addMethodCallDelegate:instance channel:channel];
+static FlutterViewController * _flutterController;
+#pragma mark - Navigation Property
++(FlutterViewController *)flutterViewController{
+    return _flutterController;
+}
++(void) setFlutterViewController:(FlutterViewController *) newFlutterViewController{
+    _flutterController=newFlutterViewController;
 }
 
-- (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result { 
-  if ([@"startOnyx" isEqualToString:call.method]) {
-    //  [self startOnyx];
-  //  result([@"iOS " stringByAppendingString:[[UIDevice currentDevice] systemVersion]]);
-  } 
-  else  if ([@"configureOnyx" isEqualToString:call.method]) {
-      UIViewController *parentViewController = [[[UIApplication sharedApplication] delegate] window].rootViewController;
++ (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
+    channel = [FlutterMethodChannel
+                methodChannelWithName:@"com.dft.onyx_plugin/methodChannel"
+                binaryMessenger:[registrar messenger]];
+    OnyxPlugin* instance = [[OnyxPlugin alloc] init];
+    [registrar addMethodCallDelegate:instance channel:channel];
+}
 
-      while (parentViewController.presentedViewController != nil){
-          parentViewController = parentViewController.presentedViewController;
-      }
-    //  OnyxCameraPluginViewController *onyxCameraPluginViewController= [[OnyxCameraPluginViewController alloc] init];
-     OnyxConfigurationBuilder* onyxConfigBuilder = [[OnyxConfigurationBuilder alloc] init];
-     onyxConfigBuilder.setViewController(parentViewController)
-       .setLicenseKey(call.arguments[@"licenseKey"])
-      .setReturnRawImage([call.arguments[@"isReturnRawImage"] boolValue])
-        .setReturnProcessedImage([call.arguments[@"isProcessedImageReturned"] boolValue])
-        .setReturnWSQ([call.arguments[@"isWSQImageReturned"] boolValue])
-        .setReturnFingerprintTemplate([call.arguments[@"isFingerprintTemplateImageReturned"] boolValue])
-        .setReturnISOFingerprintTemplate([call.arguments[@"isConvertToISOTemplate"] boolValue])
-      .setUseOnyxLive([call.arguments[@"isOnyxLive"] boolValue])
-        .setReticleOrientation((ReticleOrientation)0)
-        .setShowLoadingSpinner([call.arguments[@"isLoadingSpinnerShown"] boolValue])
-      
-        .setSuccessCallback([self onyxSuccessCallback])
-        .setErrorCallback([self onyxErrorCallback])
-        .setOnyxCallback([self onyxCallback]);
-
-         /*
-     * Legacy params
-     *
-     * NOTE: subject of change
-     */
-onyxConfigBuilder
-    //.setReturnGrayRawImage(_returnGrayRawImage.on)
-    .setReturnEnhancedImage([call.arguments[@"isEnhancedImageReturned"] boolValue])
-      
-    //.setReturnBlackWhiteProcessedImage(_returnBlackWhiteProcessedImage.on)
-    //.setReturnGrayRawWSQ(_returnGrayRawWsq.on)
-    .setUseFlash(YES)
-    .setUseManualCapture([call.arguments[@"isManualCapture"] boolValue])
-    //.setShowManualCaptureText(_showManualCaptureText.on)
-      .setImageRotation((ImageRotation)[call.arguments[@"imageRotation"] intValue]);
-    //.setFingerDetectMode((FingerDetectMode)_fingerDetectMode.selectedSegmentIndex)
-    
-//    if (![_backgroundColorHexString.text isEqualToString:@""]) {
-//        onyxConfigBuilder.setBackgroundColorHexString([NSString stringWithFormat:@"#%@", _backgroundColorHexString.text]);
-//    }
-//
-//    if (![_backButtonText.text isEqualToString:@""]) {
-//        onyxConfigBuilder.setBackButtonText(_backButtonText.text);
-//    }
-//
-//    if (![_manualCaptureText.text isEqualToString:@""]) {
-//        onyxConfigBuilder.setManualCaptureText(_manualCaptureText.text);
-//    }
-//
-//    if (![_infoText.text isEqualToString:@""]) {
-//        onyxConfigBuilder.setInfoText(_infoText.text);
-//    }
-//
-//    if (![_infoTextColorHexString.text isEqualToString:@""]) {
-//        onyxConfigBuilder.setInfoTextColorHexString([NSString stringWithFormat:@"#%@", _infoTextColorHexString.text]);
-//    }
-//
-//    if (![_base64ImageData.text isEqualToString:@""]) {
-//        onyxConfigBuilder.setBase64ImageData(_base64ImageData.text);
-//    }
-//
-//    if (![_LEDBrightness.text isEqualToString:@""]) {
-//        onyxConfigBuilder.setLEDBrightness([_LEDBrightness.text floatValue]);
-//    }
-//
-//    // Crop Factor
-    if (![call.arguments[@"cropFactor"] isEqualToString:@""]) {
-        onyxConfigBuilder.setCropFactor([call.arguments[@"cropFactor"] floatValue]);
+- (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
+    if([@"startOnyx" isEqualToString:call.method]){
+        if(_configuredOnyx != nil){
+            [_configuredOnyx capture:_flutterController];
+        }
     }
-//
-//    // Crop Size
-//    float width = 600;
-//    float height = 960;
-//    float floatValue = 0;
-    if (![call.arguments[@"cropSizeHeight"] isEqualToString:@""] && ![call.arguments[@"cropSizeWidth"] isEqualToString:@""]) {
-        onyxConfigBuilder.setCropSize(CGSizeMake([call.arguments[@"cropSizeWidth"] floatValue], [call.arguments[@"cropSizeHeight"] floatValue]));
-    }
-//        floatValue = [_cropSizeWidth.text floatValue];
-//        if (floatValue != 0) {
-//            width = floatValue;
-//        }
-//    }
-//    if (![_cropSizeHeight.text isEqualToString:@""]) {
-//        floatValue = [_cropSizeHeight.text floatValue];
-//        if (floatValue != 0) {
-//            height = floatValue;
-//        }
-//    }
-//
-//    onyxConfigBuilder.setCropSize(CGSizeMake(width, height));
-
-         [onyxConfigBuilder buildOnyxConfiguration];
-
-  }
-  else {
-    result(FlutterMethodNotImplemented);
+    else if ([@"configureOnyx" isEqualToString:call.method]) {
+      [[self configureOnyx: call] buildOnyxConfiguration];
+      result(0);
+  } else {
+      result(FlutterMethodNotImplemented);
   }
 }
 
@@ -127,67 +42,125 @@ onyxConfigBuilder
 -(void(^)(Onyx* configuredOnyx))onyxCallback {
     return ^(Onyx* configuredOnyx) {
         NSLog(@"Onyx Callback");
-        self.onyx= configuredOnyx;
         dispatch_async(dispatch_get_main_queue(), ^{
-            [channel invokeMethod:@"onyx_configured"
-                             arguments:nil
-            ];
-            UIViewController *parentViewController = [[[UIApplication sharedApplication] delegate] window].rootViewController;
-
-            while (parentViewController.presentedViewController != nil){
-                parentViewController = parentViewController.presentedViewController;
-            }
-         //   [parentViewController performSegueWithIdentifier:@"segueToOnyxResult" sender:configuredOnyx];
-          //  [configuredOnyx capture:parentViewController];
-          //  OnyxCameraPluginViewController *onyxCameraPluginViewController= [[OnyxCameraPluginViewController alloc] init];
-         //   onyxCameraPluginViewController.configuredOnyx=configuredOnyx;
-           // [parentViewController showViewController:onyxCameraPluginViewController sender:configuredOnyx];
-            [configuredOnyx capture:parentViewController];
+            _configuredOnyx= configuredOnyx;
+            [channel invokeMethod:@"onyx_configured" arguments:nil];
         });
-
     };
 }
 
 -(void(^)(OnyxResult* onyxResult))onyxSuccessCallback {
     return ^(OnyxResult* onyxResult) {
         NSLog(@"Onyx Success Callback");
-
-        self->_onyxResult = onyxResult;
-      //  [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
-     //       [self performSegueWithIdentifier:@"segueToOnyxResult" sender:onyxResult];
-      //  }];
+        NSMutableDictionary* flutterResults=  [self getOnyxResultFlutterParams:onyxResult];
+        dispatch_async(dispatch_get_main_queue(), ^{
+                [channel invokeMethod:@"onyx_success" arguments:flutterResults];
+        });        
+        [_flutterController.navigationController popToRootViewControllerAnimated:YES];
     };
 }
 
+/*
+handles the onyx error callback.
+*/
 -(void(^)(OnyxError* onyxError)) onyxErrorCallback {
     return ^(OnyxError* onyxError) {
-        
         dispatch_async(dispatch_get_main_queue(), ^{
-            
-                NSLog(@"Onyx Error Callback");
-                [channel invokeMethod:@"onyx_error"
-                                 arguments:@{
-                                     @"errorMessage" :  onyxError.errorMessage//,
-                                     //@"args" : [NSString stringWithFormat:@"Hello Listener! %d", time]
-                                 }
-                ];
-          //  channel.invokeMethod(
-            //            [self stopSpinnner];
-          //  UIAlertController *alertController = [UIAlertController
-                                   //       alertControllerWithTitle:@"ONYX Error"
-                                  //        message:[NSString stringWithFormat:@"ErrorCode: %d, ErrorMessage:%@, Error:%@", onyxError.error, onyxError.errorMessage, onyxError.exception]
-                                   //       preferredStyle:UIAlertControllerStyleAlert];//
-
-           // UIAlertAction *okAction = [UIAlertAction
-            //            actionWithTitle:@"OK"
-              //                    style:UIAlertActionStyleDefault
-             //                   handler:nil];
-
-         //   [alertController addAction:okAction];
-         //   [self presentViewController:alertController animated:YES completion:nil];
+            NSLog(@"Onyx Error Callback");
+            [channel invokeMethod:@"onyx_error"
+                        arguments:@{@"errorMessage":  onyxError.errorMessage}
+             ];
         });
-            
     };
+}
+
+
+/*
+ Configures onyx with the passed in parameters.
+ */
+-(OnyxConfigurationBuilder*) configureOnyx:(FlutterMethodCall*)call{
+    OnyxConfigurationBuilder* onyxConfigBuilder = [[OnyxConfigurationBuilder alloc] init];
+    onyxConfigBuilder.setViewController(_flutterController)
+        .setLicenseKey(call.arguments[@"licenseKey"])
+        .setReturnRawImage([call.arguments[@"isReturnRawImage"] boolValue])
+        .setReturnProcessedImage([call.arguments[@"isProcessedImageReturned"] boolValue])
+        .setReturnWSQ([call.arguments[@"isWSQImageReturned"] boolValue])
+        .setReturnFingerprintTemplate([call.arguments[@"isFingerprintTemplateImageReturned"] boolValue])
+        .setReturnISOFingerprintTemplate([call.arguments[@"isConvertToISOTemplate"] boolValue])
+        .setUseOnyxLive([call.arguments[@"isOnyxLive"] boolValue])
+        .setShowLoadingSpinner([call.arguments[@"isLoadingSpinnerShown"] boolValue])
+        .setUseFlash(YES)
+        .setReturnEnhancedImage([call.arguments[@"isEnhancedImageReturned"] boolValue])
+        .setUseManualCapture([call.arguments[@"isManualCapture"] boolValue])
+        .setImageRotation((ImageRotation)[call.arguments[@"imageRotation"] intValue])
+        .setReturnGrayRawImage([call.arguments[@"isGrayImageReturned"] boolValue])
+        .setReturnBlackWhiteProcessedImage([call.arguments[@"isBlackWhiteProcessedImageReturned"] boolValue])
+        .setReturnGrayRawWSQ([call.arguments[@"isGrayRawWSQReturned"] boolValue])
+        .setBackButtonText(call.arguments[@"backButtonText"])
+        .setBase64ImageData(call.arguments[@"base64ImageData"])
+        .setSuccessCallback([self onyxSuccessCallback])
+        .setErrorCallback([self onyxErrorCallback])
+        .setOnyxCallback([self onyxCallback]);
+
+    ReticleOrientation reticleOrientation=LEFT;// ReticleOrientation. 0;
+    if([@"RIGHT" isEqualToString:call.arguments[@"reticleOrientation"]]){
+        reticleOrientation=RIGHT;
+    }
+    if([@"THUMB_PORTRAIT" isEqualToString:call.arguments[@"reticleOrientation"]]){
+        reticleOrientation=THUMB_PORTRAIT;
+    }
+    onyxConfigBuilder.setReticleOrientation(reticleOrientation);
+    if (![call.arguments[@"reticleAngle"] isEqualToString:@""]) {
+        onyxConfigBuilder.setReticleAngle([call.arguments[@"reticleAngle"] floatValue]);
+    }
+    // Crop Factor
+    if (![call.arguments[@"cropFactor"] isEqualToString:@""]) {
+        onyxConfigBuilder.setCropFactor([call.arguments[@"cropFactor"] floatValue]);
+    }
+    // Crop Size
+    if (![call.arguments[@"cropSizeHeight"] isEqualToString:@""] && ![call.arguments[@"cropSizeWidth"] isEqualToString:@""]) {
+        onyxConfigBuilder.setCropSize(CGSizeMake([call.arguments[@"cropSizeWidth"] floatValue], [call.arguments[@"cropSizeHeight"] floatValue]));
+    }
+    return onyxConfigBuilder;
+}
+
+///Gets the onyx results as a dictionary of params to pass to flutter.
+-(NSMutableDictionary*) getOnyxResultFlutterParams:(OnyxResult*) onyxResult{
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc]initWithCapacity:8];
+    [dict setObject:[NSMutableArray arrayWithArray:[self getImageByteArrays: [onyxResult getRawFingerprintImages]]] forKey:@"rawFingerprintImages"];
+    [dict setObject:[NSMutableArray arrayWithArray:[self getImageByteArrays: [onyxResult getProcessedFingerprintImages]]] forKey:@"processedFingerprintImages"];
+    [dict setObject:[NSMutableArray arrayWithArray:[self getImageByteArrays: [onyxResult getEnhancedFingerprintImages]]] forKey:@"enhancedFingerprintImages"];
+    [dict setObject:[NSMutableArray arrayWithArray:[onyxResult getWsqData]] forKey:@"wsqData"];
+    CaptureMetrics* metrics= [onyxResult getMetrics];
+    if(metrics != nil){
+        [dict setObject:[NSNumber numberWithFloat:[metrics getLivenessConfidence]] forKey:@"livenessConfidence"];
+        [dict setObject:[NSNumber numberWithFloat:[metrics getFocusQuality]] forKey:@"focusQuality"];
+        NSMutableArray* nfiqArray=[metrics getNfiqMetrics];
+        NSUInteger nfiqCount = [nfiqArray count];
+        NSMutableArray *nfiqScores = [[NSMutableArray alloc] initWithCapacity:nfiqCount];
+        NSMutableArray *mlpScores = [[NSMutableArray alloc] initWithCapacity:nfiqCount];
+        for(NfiqMetrics* nfiq in nfiqArray){
+            if(nfiq != nil){
+                [nfiqScores addObject: [NSNumber numberWithInt:[nfiq getNfiqScore]]];
+                [mlpScores addObject: [NSNumber numberWithFloat:[nfiq getMlpScore]]];
+            }
+        }
+        [dict setObject:[NSMutableArray arrayWithArray:nfiqScores] forKey:@"nfiqScores"];
+        [dict setObject:[NSMutableArray arrayWithArray:mlpScores] forKey:@"mlpScores"];
+    }
+    return dict;
+}
+
+/*
+ Converts an array of UIImages to an array of byte arrays.
+*/
+-(NSMutableArray*) getImageByteArrays:(NSMutableArray*) imageArray{
+    NSUInteger count = [imageArray count];
+    NSMutableArray *returnArray = [[NSMutableArray alloc] initWithCapacity:count];
+    for (UIImage* o in imageArray) {
+        [returnArray addObject:  UIImagePNGRepresentation(o)];
+    }
+    return returnArray;
 }
 
 @end

@@ -12,10 +12,14 @@
 //@property FlutterMethodChannel* channel;
 @property OnyxResult* onyxResult;
 @property  Onyx* onyx;
+
++(FlutterViewController *)flutterViewController;
++(void) setFlutterViewController:(FlutterViewController *) newFlutterViewController;
 -(void(^)(OnyxResult* onyxResult))onyxSuccessCallback;
 
 -(void(^)(OnyxError* onyxError)) onyxErrorCallback;
 
 -(void(^)(Onyx* configuredOnyx))onyxCallback;
+
 
 @end

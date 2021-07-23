@@ -122,7 +122,8 @@ class _FingerprintScreenState extends State<FingerprintScreen> {
 
   Widget scoreWidget() {
     List<Widget> results = [];
-    if (OnyxCamera.results.hasMatches!) {
+    if (OnyxCamera.results.hasMatches != null &&
+        OnyxCamera.results.hasMatches!) {
       results.add(Text("Has Matches"));
     }
     if (OnyxCamera.results.pgmData.isNotEmpty) {
@@ -165,8 +166,8 @@ class _FingerprintScreenState extends State<FingerprintScreen> {
               children: [Text("MLP Scores"), ...scores])));
     }
     return Wrap(
-        alignment: WrapAlignment.spaceEvenly,
-        runAlignment: WrapAlignment.spaceEvenly,
+        alignment: WrapAlignment.spaceBetween,
+        runAlignment: WrapAlignment.spaceBetween,
         children: results);
   }
 }

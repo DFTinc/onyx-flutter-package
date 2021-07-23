@@ -19,7 +19,12 @@ extension LayoutPreferenceExtension on LayoutPreference {
 ///the settings for the onyx plugin
 class OnyxOptions {
   OnyxOptions(
-      [this.licenseKey = "7318-4496-5417-3-2",
+      [this.licenseKey = "",
+      this.isGrayImageReturned = false,
+      this.isBlackWhiteProcessedImageReturned = false,
+      this.isGrayRawWSQReturned = false,
+      this.backButtonText = "",
+      this.base64ImageData = "",
       this.isRawImageReturned = true,
       this.cropFactor = 1.0,
       this.cropSizeHeight = 512,
@@ -50,6 +55,26 @@ class OnyxOptions {
 
   ///The onyx lisense key
   String? licenseKey;
+
+  ///If the gray image should be returned.
+  ///This configuration option is only supported by iOS.
+  bool isGrayImageReturned;
+
+  ///If the black and white processed image should be returned.
+  ///This configuration option is only supported by iOS.
+  bool isBlackWhiteProcessedImageReturned;
+
+  ///If the gray raw WSQ should be returned.
+  ///This configuration option is only supported by iOS.
+  bool isGrayRawWSQReturned;
+
+  ///The text of the back button.
+  ///This configuration option is only supported by iOS.
+  String backButtonText;
+
+  ///sets the image data to be displayed on the capture screen to this base 64 string.
+  ///This configuration option is only supported by iOS.
+  String base64ImageData;
 
   ///the onyx layout preferences.
   LayoutPreference layoutPreference;
@@ -157,6 +182,11 @@ class OnyxOptions {
   dynamic toParams() {
     return <String, dynamic>{
       "licenseKey": licenseKey,
+      "isGrayImageReturned": isGrayImageReturned,
+      "isBlackWhiteProcessedImageReturned": isBlackWhiteProcessedImageReturned,
+      "isGrayRawWSQReturned": isGrayRawWSQReturned,
+      "backButtonText": backButtonText,
+      "base64ImageData": base64ImageData ?? "",
       "isReturnRawImage": isRawImageReturned.toString(),
       "isProcessedImageReturned": isProcessedImageReturned.toString(),
       "isEnhancedImageReturned": isEnhancedImageReturned.toString(),
