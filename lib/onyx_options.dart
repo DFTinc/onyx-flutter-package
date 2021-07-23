@@ -1,116 +1,64 @@
-part of onyx;
-
-enum ReticleOrientations { LEFT, RIGHT, THUMB_PORTRAIT }
-
-extension ReticleOrientationExtension on ReticleOrientations {
-  String toValueString() {
-    return this.toString().split('.').last;
-  }
-}
-
-enum LayoutPreference { FULL, UPPER_THIRD }
-
-extension LayoutPreferenceExtension on LayoutPreference {
-  String toValueString() {
-    return this.toString().split('.').last;
-  }
-}
+part of 'onyx.dart';
 
 ///the settings for the onyx plugin
 class OnyxOptions {
-  OnyxOptions(
-      [this.licenseKey = "",
-      this.isGrayImageReturned = false,
-      this.isBlackWhiteProcessedImageReturned = false,
-      this.isGrayRawWSQReturned = false,
-      this.backButtonText = "",
-      this.base64ImageData = "",
-      this.isRawImageReturned = true,
-      this.isUseFlash = true,
-      this.cropFactor = 1.0,
-      this.cropSizeHeight = 512,
-      this.cropSizeWidth = 300,
-      this.isProcessedImageReturned = true,
-      this.isEnhancedImageReturned = true,
-      this.isWSQImageReturned = true,
-      this.isFingerprintTemplateImageReturned = true,
-      this.isLoadingSpinnerShown = false,
-      this.isImageThreshold = false,
-      this.isThumbCapture = false,
-      this.isManualCapture = false,
-      this.isOnyxLive = false,
-      this.isNFIQMetrics = false,
-      this.isPGMFormatByteArrayReturned = false,
-      this.isConvertToISOTemplate = false,
-      this.imageRotation = 0,
-      this.isFullFrameImageReturned = false,
-      this.layoutPreference = LayoutPreference.FULL,
-      this.reticleOrientation = ReticleOrientations.LEFT,
-      this.isFourFingerReticleUsed = true,
-      this.isPerformQualityCheckMatch = false,
-      this.isUploadMetrics = false,
-      this.isOnlyHighQualityImageReturned = false,
-      this.isErrorOnNFIQ5Score = false,
-      this.isShutterSoundEnabled = false,
-      this.isCamera2PreviewStreamingUsed = false]);
-
   ///The onyx license key
-  String? licenseKey;
+  String? licenseKey = "7318-4496-5417-3-2";
 
   ///If the gray image should be returned.
   ///This configuration option is only supported by iOS.
-  bool isGrayImageReturned;
+  bool isGrayImageReturned = false;
 
   ///If the black and white processed image should be returned.
   ///This configuration option is only supported by iOS.
-  bool isBlackWhiteProcessedImageReturned;
+  bool isBlackWhiteProcessedImageReturned = false;
 
   ///If the gray raw WSQ should be returned.
   ///This configuration option is only supported by iOS.
-  bool isGrayRawWSQReturned;
+  bool isGrayRawWSQReturned = false;
 
   ///The text of the back button.
   ///This configuration option is only supported by iOS.
-  String backButtonText;
+  String backButtonText = "";
 
   ///sets the image data to be displayed on the capture screen to this base 64 string.
   ///This configuration option is only supported by iOS.
-  String base64ImageData;
+  String base64ImageData = "";
 
   ///the onyx layout preferences.
   ///This configuration option is only supported by Android.
-  LayoutPreference layoutPreference;
+  LayoutPreference layoutPreference = LayoutPreference.FULL;
 
   ///If the raw image is to be returned.
-  bool isRawImageReturned;
+  bool isRawImageReturned = true;
 
   ///If the processed image is to be returned.
-  bool isProcessedImageReturned;
+  bool isProcessedImageReturned = true;
 
   ///If the enhanced image is to be returned.
-  bool isEnhancedImageReturned;
+  bool isEnhancedImageReturned = true;
 
   ///If the WSQ image should be returned.
-  bool isWSQImageReturned;
+  bool isWSQImageReturned = true;
 
   ///If the fingerprint template image should be returned.
-  bool isFingerprintTemplateImageReturned;
+  bool isFingerprintTemplateImageReturned = true;
 
   ///If the loading spinner should be shown.
-  bool isLoadingSpinnerShown;
+  bool isLoadingSpinnerShown = false;
 
   ///If the image threshold should be set.
   ///This configuration option is only supported by Android.
-  bool isImageThreshold;
+  bool isImageThreshold = false;
 
   ///The width to crop the image by.
-  double cropSizeWidth;
+  double cropSizeWidth = 300;
 
   ///The height to crop the image by.
-  double cropSizeHeight;
+  double cropSizeHeight = 512;
 
   ///The crop factor for the image.
-  double cropFactor;
+  double cropFactor = 1.0;
 
   ///The targeted pixels per inch.
   ///Suggested values are around 500.0.
@@ -118,17 +66,17 @@ class OnyxOptions {
   double? targetPPI;
 
   ///If the thumb is captured
-  bool isThumbCapture;
+  bool isThumbCapture = false;
 
   ///If it's a manual capture.
-  bool isManualCapture;
+  bool isManualCapture = false;
 
   ///If onyx is live.
-  bool isOnyxLive;
+  bool isOnyxLive = false;
 
   ///if the full frame image should be returned.
   ///This configuration option is only supported by Android.
-  bool isFullFrameImageReturned;
+  bool isFullFrameImageReturned = false;
 
   /// The scale factor of the full frame image.
   ///This configuration option is only supported by Android.
@@ -136,17 +84,17 @@ class OnyxOptions {
 
   ///The Pgm Format Byte Array flag
   ///This configuration option is only supported by Android.
-  bool isPGMFormatByteArrayReturned;
+  bool isPGMFormatByteArrayReturned = false;
 
   ///If NFIQ metrics are needed.
   ///This configuration option is only supported by Android.
-  bool isNFIQMetrics;
+  bool isNFIQMetrics = false;
 
   ///The number to rotate the image by.
-  int imageRotation;
+  int imageRotation = 0;
 
   /// Flag determines if the results should be converted to an ISO template.
-  bool isConvertToISOTemplate;
+  bool isConvertToISOTemplate = false;
 
   ///The reticle angle.
   ///This property overrides the value set by the [reticleOrientation] property.
@@ -154,38 +102,38 @@ class OnyxOptions {
 
   ///The reticle orientation.
   ///This property is overridden by the [reticleAngle] property when it's set.
-  ReticleOrientations reticleOrientation;
+  ReticleOrientations reticleOrientation = ReticleOrientations.LEFT;
 
   ///Flag determines if the 4 finger reticle should be used.
   ///This configuration option is only supported by Android.
-  bool isFourFingerReticleUsed;
+  bool isFourFingerReticleUsed = true;
 
   ///Flag determines if a quality check match should be performed.
   ///This configuration option is only supported by Android.
-  bool isPerformQualityCheckMatch;
+  bool isPerformQualityCheckMatch = false;
 
   ///Determines if the metrics should be uploaded.
   ///This configuration option is only supported by Android.
-  bool isUploadMetrics;
+  bool isUploadMetrics = false;
 
   /// flag determines if only high quality images should be returned.
   ///This configuration option is only supported by Android.
-  bool isOnlyHighQualityImageReturned;
+  bool isOnlyHighQualityImageReturned = false;
 
   ///flag determines if an error should be raised for low nfiq5 scores.
   ///This configuration option is only supported by Android.
-  bool isErrorOnNFIQ5Score;
+  bool isErrorOnNFIQ5Score = false;
 
-  ///flag detrmines if the flash should be on by default.
-  bool isUseFlash;
+  ///flag determines if the flash should be on by default.
+  bool isUseFlash = true;
 
   ///if the shutter sound should be enabled.
   ///This configuration option is only supported by Android.
-  bool isShutterSoundEnabled;
+  bool isShutterSoundEnabled = false;
 
   ///if the 2nd device camera should be used for preview streaming.
   ///This configuration option is only supported by Android.
-  bool isCamera2PreviewStreamingUsed;
+  bool isCamera2PreviewStreamingUsed = false;
 
   ///the unique id of the user. (null if not available)
   ///This configuration option is only supported by Android.
@@ -208,43 +156,41 @@ class OnyxOptions {
       "isGrayRawWSQReturned": isGrayRawWSQReturned,
       "backButtonText": backButtonText,
       "base64ImageData": base64ImageData,
-      "isReturnRawImage": isRawImageReturned.toString(),
-      "isProcessedImageReturned": isProcessedImageReturned.toString(),
-      "isEnhancedImageReturned": isEnhancedImageReturned.toString(),
-      "isWSQImageReturned": isWSQImageReturned.toString(),
-      "isFingerprintTemplateImageReturned":
-          isFingerprintTemplateImageReturned.toString(),
-      "isLoadingSpinnerShown": isLoadingSpinnerShown.toString(),
-      "isImageThreshold": isImageThreshold.toString(),
-      "cropSizeWidth": cropSizeWidth.toString(),
-      "cropSizeHeight": cropSizeHeight.toString(),
+      "isReturnRawImage": isRawImageReturned,
+      "isProcessedImageReturned": isProcessedImageReturned,
+      "isEnhancedImageReturned": isEnhancedImageReturned,
+      "isWSQImageReturned": isWSQImageReturned,
+      "isFingerprintTemplateImageReturned": isFingerprintTemplateImageReturned,
+      "isLoadingSpinnerShown": isLoadingSpinnerShown,
+      "isImageThreshold": isImageThreshold,
+      "cropSizeWidth": cropSizeWidth,
+      "cropSizeHeight": cropSizeHeight,
       "cropFactor": cropFactor.toString(),
       // java doesn't do nullable doubles, and thus -1 indicates that there is no PPI.
       "targetPPI": (targetPPI ?? -1.0).toString(),
-      "isThumbCapture": isThumbCapture.toString(),
-      "isManualCapture": isManualCapture.toString(),
-      "isOnyxLive": isOnyxLive.toString(),
-      "isNFIQMetrics": isNFIQMetrics.toString(),
+      "isThumbCapture": isThumbCapture,
+      "isManualCapture": isManualCapture,
+      "isOnyxLive": isOnyxLive,
+      "isNFIQMetrics": isNFIQMetrics,
       "imageRotation": imageRotation.toString(),
       "reticleAngle": (reticleAngle ?? "").toString(),
       "reticleOrientation": reticleOrientation.toValueString(),
-      "isFullFrameImageReturned": isFullFrameImageReturned.toString(),
+      "isFullFrameImageReturned": isFullFrameImageReturned,
       "FullFrameScaleFactor": (fullFrameScaleFactor ?? "").toString(),
-      "isPGMFormatByteArrayReturned": isPGMFormatByteArrayReturned.toString(),
-      "isConvertToISOTemplate": isConvertToISOTemplate.toString(),
+      "isPGMFormatByteArrayReturned": isPGMFormatByteArrayReturned,
+      "isConvertToISOTemplate": isConvertToISOTemplate,
       "layoutPreference": layoutPreference.toValueString(),
-      "isFourFingerReticleUsed": isFourFingerReticleUsed.toString(),
-      "isPerformQualityCheckMatch": isPerformQualityCheckMatch.toString(),
-      "isUploadMetrics": isUploadMetrics.toString(),
-      "isOnlyHighQualityImageReturned":
-          isOnlyHighQualityImageReturned.toString(),
-      "isErrorOnNFIQ5Score": isErrorOnNFIQ5Score.toString(),
-      "isShutterSoundEnabled": isShutterSoundEnabled.toString(),
-      "isCamera2PreviewStreamingUsed": isCamera2PreviewStreamingUsed.toString(),
+      "isFourFingerReticleUsed": isFourFingerReticleUsed,
+      "isPerformQualityCheckMatch": isPerformQualityCheckMatch,
+      "isUploadMetrics": isUploadMetrics,
+      "isOnlyHighQualityImageReturned": isOnlyHighQualityImageReturned,
+      "isErrorOnNFIQ5Score": isErrorOnNFIQ5Score,
+      "isShutterSoundEnabled": isShutterSoundEnabled,
+      "isCamera2PreviewStreamingUsed": isCamera2PreviewStreamingUsed,
       "uniqueUserId": (uniqueUserId ?? ""),
       "lensFocusDistanceCamera2": (lensFocusDistanceCamera2 ?? "").toString(),
       "thumbScaleFactor": (thumbScaleFactor ?? "").toString(),
-      "isUseFlash": isUseFlash.toString()
+      "isUseFlash": isUseFlash
     };
   }
 }
