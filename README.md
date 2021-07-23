@@ -1,4 +1,4 @@
-# DFT-onyx-flutter-package
+# Onyx Flutter Package
 
 This is not free software. This plugin uses the Onyx software development kits (SDKs) for Android and iOS. It requires a license agreement with:[Diamond Fortress Technologies, Inc.](https://diamondfortress.com/)
 
