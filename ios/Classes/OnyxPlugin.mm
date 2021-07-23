@@ -90,7 +90,7 @@ handles the onyx error callback.
         .setReturnISOFingerprintTemplate([call.arguments[@"isConvertToISOTemplate"] boolValue])
         .setUseOnyxLive([call.arguments[@"isOnyxLive"] boolValue])
         .setShowLoadingSpinner([call.arguments[@"isLoadingSpinnerShown"] boolValue])
-        .setUseFlash(YES)
+        .setUseFlash([call.arguments[@"isUseFlash"] boolValue])
         .setReturnEnhancedImage([call.arguments[@"isEnhancedImageReturned"] boolValue])
         .setUseManualCapture([call.arguments[@"isManualCapture"] boolValue])
         .setImageRotation((ImageRotation)[call.arguments[@"imageRotation"] intValue])
