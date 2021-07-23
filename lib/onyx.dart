@@ -2,10 +2,8 @@
 library onyx;
 
 import 'dart:async';
-import 'dart:convert';
 import 'dart:typed_data';
 
-import 'dart:io' as Io;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

@@ -68,10 +68,10 @@ public class OnyxCallbackHandler implements MethodCallHandler {
     /* ONYX-RESULT */
 
     // The processed fingerprint Bitmap images indexed 0-3 for each finger , 0-3
-    // print indicies
+    // print indices
     // private ArrayList<Bitmap> processedFingerprintImages;
 
-    // Wave-Length Scalar Quantization for greyscale prints
+    // Wave-Length Scalar Quantization for grayscale prints
     // The WSQ data as a byte array
     // private ArrayList<byte[]> wsqData;
     /// The function that's triggered by the onyx error event.
@@ -149,31 +149,24 @@ public class OnyxCallbackHandler implements MethodCallHandler {
                 .setReturnEnhancedImage(OnyxCallbackHelpers.getBoolValue(call, "isEnhancedImageReturned"))
                 .setReturnFullFrameImage(OnyxCallbackHelpers.getBoolValue(call, "isFullFrameImageReturned"))
                 .setReturnWSQ(OnyxCallbackHelpers.getBoolValue(call, "isWSQImageReturned"))
-                .setReturnFingerprintTemplate(
-                        OnyxCallbackHelpers.getBoolValue(call, "isFingerprintTemplateImageReturned"))
-        .setReturnPGMFormatByteArray( OnyxCallbackHelpers.getBoolValue(call, "isPGMFormatByteArrayReturned"))
+                .setReturnFingerprintTemplate(OnyxCallbackHelpers.getBoolValue(call, "isFingerprintTemplateImageReturned"))
+                .setReturnPGMFormatByteArray( OnyxCallbackHelpers.getBoolValue(call, "isPGMFormatByteArrayReturned"))
                 .setShouldConvertToISOTemplate( OnyxCallbackHelpers.getBoolValue(call, "isConvertToISOTemplate"))
                 .setThresholdProcessedImage(OnyxCallbackHelpers.getBoolValue(call, "isImageThreshold"))
                 .setShowLoadingSpinner(OnyxCallbackHelpers.getBoolValue(call, "isLoadingSpinnerShown"))
                 .setUseOnyxLive(OnyxCallbackHelpers.getBoolValue(call, "isOnyxLive"))
                 .setComputeNfiqMetrics(OnyxCallbackHelpers.getBoolValue(call, "isNFIQMetrics"))
                 .setUseFlash(true)
-        .setUseFourFingerReticle(OnyxCallbackHelpers.getBoolValue(call, "isFourFingerReticleUsed"))
-
-                
+                .setUseFourFingerReticle(OnyxCallbackHelpers.getBoolValue(call, "isFourFingerReticleUsed"))
                 .setPerformQualityCheckMatch(OnyxCallbackHelpers.getBoolValue(call, "isPerformQualityCheckMatch"))
-
                 .setUploadMetrics(OnyxCallbackHelpers.getBoolValue(call, "isUploadMetrics"))
-                 .setReturnOnlyHighQualityImages(OnyxCallbackHelpers.getBoolValue(call, "isOnlyHighQualityImageReturned"))
-
-        .setReturnOnyxErrorOnNFIQScore5(OnyxCallbackHelpers.getBoolValue(call, "isErrorOnNFIQ5Score"))
-      .setEnableShutterSound(OnyxCallbackHelpers.getBoolValue(call, "isShutterSoundEnabled"))
-       .setUseCamera2PreviewStreaming(OnyxCallbackHelpers.getBoolValue(call, "isCamera2PreviewStreamingUsed"))
+                .setReturnOnlyHighQualityImages(OnyxCallbackHelpers.getBoolValue(call, "isOnlyHighQualityImageReturned"))
+                .setReturnOnyxErrorOnNFIQScore5(OnyxCallbackHelpers.getBoolValue(call, "isErrorOnNFIQ5Score"))
+                .setEnableShutterSound(OnyxCallbackHelpers.getBoolValue(call, "isShutterSoundEnabled"))
+                .setUseCamera2PreviewStreaming(OnyxCallbackHelpers.getBoolValue(call, "isCamera2PreviewStreamingUsed"))
                 .setImageRotation(OnyxCallbackHelpers.getIntValue(call, "imageRotation"))
-                .setCropSize(OnyxCallbackHelpers.getDoubleValue(call, "cropSizeWidth"),
-                        OnyxCallbackHelpers.getDoubleValue(call, "cropSizeHeight"))
+                .setCropSize(OnyxCallbackHelpers.getDoubleValue(call, "cropSizeWidth"), OnyxCallbackHelpers.getDoubleValue(call, "cropSizeHeight"))
                 .setCropFactor(OnyxCallbackHelpers.getFloatValue(call, "cropFactor"))
-
                 .setCaptureDistanceRange(19.5f, 29.5f).setSuccessCallback(successCallback)
                 .setErrorCallback(errorCallback).setOnyxCallback(onyxCallback);
         // reticleOrientation must come before the reticleAngle property.

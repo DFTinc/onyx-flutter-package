@@ -19,6 +19,12 @@ class OnyxResults {
         enhancedFingerprintImages.add(image);
       }
     }
+    if (call.arguments["blackWhiteProcessedFingerprintImages"] != null) {
+      for (var image
+          in call.arguments["blackWhiteProcessedFingerprintImages"]) {
+        blackWhiteProcessedFingerprintImages.add(image);
+      }
+    }
     if (call.arguments["wsqData"] != null) {
       for (var image in call.arguments["wsqData"]) {
         wsqData.add(image);
@@ -60,19 +66,25 @@ class OnyxResults {
   /// The processed fingerprint images.
   List<Uint8List> processedFingerprintImages = [];
 
-  /// The enhanced Fingerprint Images.
+  /// The enhanced fingerprint Images.
   List<Uint8List> enhancedFingerprintImages = [];
+
+  /// The black and white processed fingerprint Images.
+  /// Only returned in iOS
+  List<Uint8List> blackWhiteProcessedFingerprintImages = [];
 
   ///wsq Data
   List<Uint8List> wsqData = [];
 
   ///pgm Data
+  /// Only returned in Android.
   List<Uint8List> pgmData = [];
 
   ///the fingerprint templates.
   List<OnyxFingerprintTemplate> fingerprintTemplates = [];
 
   ///the full frame image.
+  /// Only returned in Android.
   Uint8List? fullFrameImage;
 
   /// The liveness confidence.
@@ -88,5 +100,6 @@ class OnyxResults {
   List<double> mlpScores = [];
 
   /// if the fingerprints have a match.  null if not checked.
+  /// Only returned in Android.
   bool? hasMatches;
 }

@@ -54,6 +54,8 @@ class _FingerprintScreenState extends State<FingerprintScreen> {
           "Processed Images", OnyxCamera.results.processedFingerprintImages),
       ...getImages(
           "Enhanced Images", OnyxCamera.results.enhancedFingerprintImages),
+      ...getImages("Black And White Processed Images",
+          OnyxCamera.results.blackWhiteProcessedFingerprintImages),
       ...fullFrameImage(),
     ]);
   }

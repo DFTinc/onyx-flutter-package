@@ -131,12 +131,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     decoration: InputDecoration(
                         labelText: "Base 64 image data",
                         hintText: "Base 64 image Button Text"),
-                    initialValue: OnyxCamera.options.backButtonText,
+                    initialValue: OnyxCamera.options.base64ImageData,
                     onChanged: (value) {
-                      OnyxCamera.options.backButtonText = value;
-                    },
-                    keyboardType: TextInputType.numberWithOptions(
-                        decimal: true, signed: false))
+                      OnyxCamera.options.base64ImageData = value;
+                    })
               ])
             ])));
   }

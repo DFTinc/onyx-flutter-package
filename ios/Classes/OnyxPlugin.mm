@@ -4,10 +4,10 @@
 @implementation OnyxPlugin
 
 static FlutterMethodChannel* channel; 
- Onyx* _configuredOnyx;
-
+Onyx* _configuredOnyx;
 static FlutterViewController * _flutterController;
-#pragma mark - Navigation Property
+
+#pragma mark - flutter controller Property
 +(FlutterViewController *)flutterViewController{
     return _flutterController;
 }
@@ -53,10 +53,11 @@ static FlutterViewController * _flutterController;
     return ^(OnyxResult* onyxResult) {
         NSLog(@"Onyx Success Callback");
         NSMutableDictionary* flutterResults=  [self getOnyxResultFlutterParams:onyxResult];
+        [_flutterController.navigationController popToRootViewControllerAnimated:YES];
         dispatch_async(dispatch_get_main_queue(), ^{
                 [channel invokeMethod:@"onyx_success" arguments:flutterResults];
-        });        
-        [_flutterController.navigationController popToRootViewControllerAnimated:YES];
+        });         
+        [_flutterController.navigationController popToRootViewControllerAnimated:YES];   
     };
 }
 
@@ -127,10 +128,16 @@ handles the onyx error callback.
 ///Gets the onyx results as a dictionary of params to pass to flutter.
 -(NSMutableDictionary*) getOnyxResultFlutterParams:(OnyxResult*) onyxResult{
     NSMutableDictionary *dict = [[NSMutableDictionary alloc]initWithCapacity:8];
+    //add images
     [dict setObject:[NSMutableArray arrayWithArray:[self getImageByteArrays: [onyxResult getRawFingerprintImages]]] forKey:@"rawFingerprintImages"];
     [dict setObject:[NSMutableArray arrayWithArray:[self getImageByteArrays: [onyxResult getProcessedFingerprintImages]]] forKey:@"processedFingerprintImages"];
     [dict setObject:[NSMutableArray arrayWithArray:[self getImageByteArrays: [onyxResult getEnhancedFingerprintImages]]] forKey:@"enhancedFingerprintImages"];
+    [dict setObject:[NSMutableArray arrayWithArray:[self getImageByteArrays: [onyxResult getBlackWhiteProcessedFingerprintImages]]] forKey:@"blackWhiteProcessedFingerprintImages"];
     [dict setObject:[NSMutableArray arrayWithArray:[onyxResult getWsqData]] forKey:@"wsqData"];
+    //add templates
+    [dict setObject:[NSMutableArray arrayWithArray:[self getTemplateFlutterArrays: [onyxResult getFingerprintTemplates]]] forKey:@"iosFingerprintTemplates"];
+    [dict setObject:[NSMutableArray arrayWithArray:[self getTemplateFlutterArrays: [onyxResult getISOFingerprintTemplates]]] forKey:@"iosISOFingerprintTemplates"];
+    //add metrics
     CaptureMetrics* metrics= [onyxResult getMetrics];
     if(metrics != nil){
         [dict setObject:[NSNumber numberWithFloat:[metrics getLivenessConfidence]] forKey:@"livenessConfidence"];
@@ -152,13 +159,33 @@ handles the onyx error callback.
 }
 
 /*
+ Converts an array of templates for flutter.
+*/
+-(NSMutableArray*) getTemplateFlutterArrays:(NSMutableArray*) templateData{
+    if(!templateData){
+        return [[NSMutableArray alloc] initWithCapacity:0];
+    }
+    NSUInteger count = [templateData count];
+    NSMutableArray *returnArray = [[NSMutableArray alloc] initWithCapacity:count];
+    for (NSData* data in templateData) {
+        NSString* myString;
+        myString = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding ];
+        [returnArray addObject:  [data base64EncodedDataWithOptions:NSUTF8StringEncoding]];
+    }
+    return returnArray;
+}
+
+/*
  Converts an array of UIImages to an array of byte arrays.
 */
 -(NSMutableArray*) getImageByteArrays:(NSMutableArray*) imageArray{
+    if(!imageArray){
+        return [[NSMutableArray alloc] initWithCapacity:0];
+    }
     NSUInteger count = [imageArray count];
     NSMutableArray *returnArray = [[NSMutableArray alloc] initWithCapacity:count];
-    for (UIImage* o in imageArray) {
-        [returnArray addObject:  UIImagePNGRepresentation(o)];
+    for (UIImage* image in imageArray) {
+        [returnArray addObject:  UIImagePNGRepresentation(image)];
     }
     return returnArray;
 }
