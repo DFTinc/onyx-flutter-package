@@ -4,7 +4,7 @@
 
 ## 0.0.2
 
-* updated licence
+* updated license
 
 ## 0.0.4
 
