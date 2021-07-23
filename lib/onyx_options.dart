@@ -26,6 +26,7 @@ class OnyxOptions {
       this.backButtonText = "",
       this.base64ImageData = "",
       this.isRawImageReturned = true,
+      this.isUseFlash = true,
       this.cropFactor = 1.0,
       this.cropSizeHeight = 512,
       this.cropSizeWidth = 300,
@@ -175,6 +176,9 @@ class OnyxOptions {
   ///This configuration option is only supported by Android.
   bool isErrorOnNFIQ5Score;
 
+  ///flag detrmines if the flash should be on by default.
+  bool isUseFlash;
+
   ///if the shutter sound should be enabled.
   ///This configuration option is only supported by Android.
   bool isShutterSoundEnabled;
@@ -239,7 +243,8 @@ class OnyxOptions {
       "isCamera2PreviewStreamingUsed": isCamera2PreviewStreamingUsed.toString(),
       "uniqueUserId": (uniqueUserId ?? ""),
       "lensFocusDistanceCamera2": (lensFocusDistanceCamera2 ?? "").toString(),
-      "thumbScaleFactor": (thumbScaleFactor ?? "").toString()
+      "thumbScaleFactor": (thumbScaleFactor ?? "").toString(),
+      "isUseFlash": isUseFlash.toString()
     };
   }
 }

@@ -69,9 +69,9 @@ repositories {
     }
 }
 dependencies {
-implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-implementation 'com.google.android.gms:play-services-base:17.6.0'
-implementation 'com.dft.android:onyx-camera:7.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'com.google.android.gms:play-services-base:17.6.0'
+    implementation 'com.dft.android:onyx-camera:7.0.0'
 }
 ```
 

@@ -9,3 +9,7 @@
 ## 0.0.4
 
 * fixed typo in license key spelling
+
+## 1.0.0
+
+* added use flash as an option

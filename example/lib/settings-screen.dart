@@ -72,7 +72,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ))
     ]);
   }
-
+  
   ///the android only onyx configuration options.
   Widget onyxIOSOnlyOptions() {
     return Center(
@@ -442,6 +442,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   title: 'Start App when configured.',
                   subTitle:
                       "starts the onyx camera as soon as it's been configured."),
+                    CommonWidgets.settingsSwitch(
+          initialValue: OnyxCamera.options.isUseFlash,
+          onChanged: (value) {
+            setState(() {
+              OnyxCamera.options.isUseFlash = value;
+            });
+          },
+          title: 'Use Flash',
+          subTitle: 'if the camera flash should be used by default.'),
               CommonWidgets.settingsSwitch(
                 initialValue: OnyxCamera.options.isLoadingSpinnerShown,
                 title: 'Show Loading Spinner',
