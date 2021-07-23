@@ -14,7 +14,6 @@
 
 * added use flash as an option
 
-
 ## 1.0.1
 
 * added iOS support.
