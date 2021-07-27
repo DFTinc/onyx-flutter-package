@@ -3,7 +3,7 @@ part of onyx;
 ///the finderprint template that is returned from onyx
 class OnyxFingerprintTemplate {
   OnyxFingerprintTemplate._(dynamic finger) {
-    image = finger["image"];
+    file = finger["image"];
     location = finger["location"];
     nfiqScore = finger["nfiqScore"];
     quality = finger["quality"];
@@ -11,11 +11,11 @@ class OnyxFingerprintTemplate {
   }
 
   OnyxFingerprintTemplate._iOS(dynamic image) {
-    image = image;
+    file = image;
   }
 
   ///the fingerprint image.
-  Uint8List? image;
+  Uint8List? file;
 
   /// the location of the fingerprint.
   late String location = "";

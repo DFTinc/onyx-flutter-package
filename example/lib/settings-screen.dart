@@ -72,7 +72,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ))
     ]);
   }
-  
+
   ///the android only onyx configuration options.
   Widget onyxIOSOnlyOptions() {
     return Center(
@@ -178,7 +178,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 CommonWidgets.settingsSwitch(
                   initialValue: OnyxCamera.options.isImageThreshold,
                   title: 'Threshold Image',
-                  subTitle: 'Sets the image threeshold',
+                  subTitle: 'Sets the image threshold',
                   onChanged: (value) {
                     setState(() {
                       OnyxCamera.options.isImageThreshold = value;
@@ -402,7 +402,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     });
                   },
                   title: 'Enhanced Prints',
-                  subTitle: "Retieves enhanced fingerprint images."),
+                  subTitle: "Retrieves enhanced fingerprint images."),
               CommonWidgets.settingsSwitch(
                   initialValue: OnyxCamera.options.isWSQImageReturned,
                   onChanged: (value) {
@@ -442,15 +442,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   title: 'Start App when configured.',
                   subTitle:
                       "starts the onyx camera as soon as it's been configured."),
-                    CommonWidgets.settingsSwitch(
-          initialValue: OnyxCamera.options.isUseFlash,
-          onChanged: (value) {
-            setState(() {
-              OnyxCamera.options.isUseFlash = value;
-            });
-          },
-          title: 'Use Flash',
-          subTitle: 'if the camera flash should be used by default.'),
+              CommonWidgets.settingsSwitch(
+                  initialValue: OnyxCamera.options.isUseFlash,
+                  onChanged: (value) {
+                    setState(() {
+                      OnyxCamera.options.isUseFlash = value;
+                    });
+                  },
+                  title: 'Use Flash',
+                  subTitle: 'if the camera flash should be used by default.'),
               CommonWidgets.settingsSwitch(
                 initialValue: OnyxCamera.options.isLoadingSpinnerShown,
                 title: 'Show Loading Spinner',
@@ -600,7 +600,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 }
 
 class CommonWidgets {
-  // the base swtich used on this screen.
+  // the base switch used on this screen.
   static Widget settingsSwitch(
       {required bool initialValue,
       required void Function(bool) onChanged,
@@ -615,7 +615,7 @@ class CommonWidgets {
         child: Padding(
             padding: const EdgeInsets.all(4.0),
             child: Container(
-              height: 80,
+              height: 120,
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.blueAccent),
                 borderRadius: BorderRadius.circular(20),

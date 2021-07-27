@@ -18,3 +18,7 @@
 
 * added iOS support.
 * adjusted version number to match the onyx version.
+
+## 7.0.1
+
+* fixed issue with ios template

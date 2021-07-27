@@ -83,7 +83,7 @@ class _FingerprintScreenState extends State<FingerprintScreen> {
       return results;
     }
     for (var template in OnyxCamera.results.fingerprintTemplates) {
-      if (template.image != null) {
+      if (template.file != null) {
         results.add(Column(children: [
           Text("Location: " + template.location),
           Text("NFIQ Score: " + template.nfiqScore.toString()),

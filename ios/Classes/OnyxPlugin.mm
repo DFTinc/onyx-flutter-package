@@ -172,8 +172,6 @@ handles the onyx error callback.
     NSUInteger count = [templateData count];
     NSMutableArray *returnArray = [[NSMutableArray alloc] initWithCapacity:count];
     for (NSData* data in templateData) {
-        NSString* myString;
-        myString = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding ];
         [returnArray addObject:  [data base64EncodedDataWithOptions:NSUTF8StringEncoding]];
     }
     return returnArray;
@@ -194,24 +192,5 @@ handles the onyx error callback.
     return returnArray;
 }
 
-- (UIViewController *)topViewController{
-  return [self topViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
-}
-
-- (UIViewController *)topViewController:(UIViewController *)rootViewController
-{
-  if ([rootViewController isKindOfClass:[UINavigationController class]]) {
-    UINavigationController *navigationController = (UINavigationController *)rootViewController;
-    return [self topViewController:[navigationController.viewControllers lastObject]];
-  }
-  if ([rootViewController isKindOfClass:[UITabBarController class]]) {
-    UITabBarController *tabController = (UITabBarController *)rootViewController;
-    return [self topViewController:tabController.selectedViewController];
-  }
-  if (rootViewController.presentedViewController) {
-    return [self topViewController:rootViewController];
-  }
-  return rootViewController;
-}
 
 @end
