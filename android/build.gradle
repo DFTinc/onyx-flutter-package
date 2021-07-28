@@ -54,5 +54,5 @@ repositories {
     mavenCentral()
 }
 dependencies {
-    implementation 'com.dft.android:onyx-camera:7.0.0'
+    implementation 'com.dft.android:onyx-camera:7.1.1'
 }
