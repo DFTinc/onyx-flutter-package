@@ -7,15 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		12D8C9E92683C079001C6A2F /* capture_unet_nn_quant.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 12D8C9E62683C079001C6A2F /* capture_unet_nn_quant.tflite */; };
+		12B50F2E26B44570008CD6BB /* qualitynet.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 12B50F2B26B44570008CD6BB /* qualitynet.tflite */; };
+		12B50F2F26B44570008CD6BB /* capturenet.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 12B50F2C26B44570008CD6BB /* capturenet.tflite */; };
 		12D8C9EA2683C079001C6A2F /* onyx_4f_logo_v2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D8C9E72683C079001C6A2F /* onyx_4f_logo_v2@2x.png */; };
 		12D8C9EB2683C079001C6A2F /* onyx_4f_logo_v2.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D8C9E82683C079001C6A2F /* onyx_4f_logo_v2.png */; };
-		12D8C9F82683E27C001C6A2F /* too_far.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D8C9F22683E27C001C6A2F /* too_far.png */; };
 		12D8C9F92683E27C001C6A2F /* white_onyx_embossed.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D8C9F32683E27C001C6A2F /* white_onyx_embossed.png */; };
 		12D8C9FA2683E27C001C6A2F /* capture_unet_class_map.json in Resources */ = {isa = PBXBuildFile; fileRef = 12D8C9F42683E27C001C6A2F /* capture_unet_class_map.json */; };
-		12D8C9FB2683E27C001C6A2F /* capture.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D8C9F52683E27C001C6A2F /* capture.png */; };
 		12D8C9FC2683E27C001C6A2F /* onyx_4f_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D8C9F62683E27C001C6A2F /* onyx_4f_logo.png */; };
-		12D8C9FD2683E27C001C6A2F /* too_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 12D8C9F72683E27C001C6A2F /* too_close.png */; };
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
 		978B8F6F1D3862AE00F588F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFFD8EE1D35381100E5BB4D /* AppDelegate.m */; };
@@ -40,19 +38,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		12B50F2726B44570008CD6BB /* onyx_4f_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = onyx_4f_logo.png; path = Pods/OnyxCamera/OnyxCamera/Assets/onyx_4f_logo.png; sourceTree = "<group>"; };
+		12B50F2826B44570008CD6BB /* onyx_4f_logo_v2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "onyx_4f_logo_v2@2x.png"; path = "Pods/OnyxCamera/OnyxCamera/Assets/onyx_4f_logo_v2@2x.png"; sourceTree = "<group>"; };
+		12B50F2926B44570008CD6BB /* onyx_4f_logo_v2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = onyx_4f_logo_v2.png; path = Pods/OnyxCamera/OnyxCamera/Assets/onyx_4f_logo_v2.png; sourceTree = "<group>"; };
+		12B50F2A26B44570008CD6BB /* white_onyx_embossed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = white_onyx_embossed.png; path = Pods/OnyxCamera/OnyxCamera/Assets/white_onyx_embossed.png; sourceTree = "<group>"; };
+		12B50F2B26B44570008CD6BB /* qualitynet.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = qualitynet.tflite; path = Pods/OnyxCamera/OnyxCamera/Assets/qualitynet.tflite; sourceTree = "<group>"; };
+		12B50F2C26B44570008CD6BB /* capturenet.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = capturenet.tflite; path = Pods/OnyxCamera/OnyxCamera/Assets/capturenet.tflite; sourceTree = "<group>"; };
+		12B50F2D26B44570008CD6BB /* capture_unet_class_map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = capture_unet_class_map.json; path = Pods/OnyxCamera/OnyxCamera/Assets/capture_unet_class_map.json; sourceTree = "<group>"; };
 		12D8C9D62681112A001C6A2F /* capture_unet_class_map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = capture_unet_class_map.json; path = Pods/OnyxCamera/OnyxCamera/Assets/capture_unet_class_map.json; sourceTree = "<group>"; };
-		12D8C9D72681112A001C6A2F /* capture_unet_nn_quant.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = capture_unet_nn_quant.tflite; path = Pods/OnyxCamera/OnyxCamera/Assets/capture_unet_nn_quant.tflite; sourceTree = "<group>"; };
 		12D8C9DA26811143001C6A2F /* onyx_4f_logo_v2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "onyx_4f_logo_v2@2x.png"; path = "Pods/OnyxCamera/OnyxCamera/Assets/onyx_4f_logo_v2@2x.png"; sourceTree = "<group>"; };
 		12D8C9DB26811143001C6A2F /* onyx_4f_logo_v2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = onyx_4f_logo_v2.png; path = Pods/OnyxCamera/OnyxCamera/Assets/onyx_4f_logo_v2.png; sourceTree = "<group>"; };
-		12D8C9E62683C079001C6A2F /* capture_unet_nn_quant.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = capture_unet_nn_quant.tflite; path = Pods/OnyxCamera/OnyxCamera/Assets/capture_unet_nn_quant.tflite; sourceTree = "<group>"; };
 		12D8C9E72683C079001C6A2F /* onyx_4f_logo_v2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "onyx_4f_logo_v2@2x.png"; path = "Pods/OnyxCamera/OnyxCamera/Assets/onyx_4f_logo_v2@2x.png"; sourceTree = "<group>"; };
 		12D8C9E82683C079001C6A2F /* onyx_4f_logo_v2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = onyx_4f_logo_v2.png; path = Pods/OnyxCamera/OnyxCamera/Assets/onyx_4f_logo_v2.png; sourceTree = "<group>"; };
-		12D8C9F22683E27C001C6A2F /* too_far.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = too_far.png; path = Pods/OnyxCamera/OnyxCamera/Assets/too_far.png; sourceTree = "<group>"; };
 		12D8C9F32683E27C001C6A2F /* white_onyx_embossed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = white_onyx_embossed.png; path = Pods/OnyxCamera/OnyxCamera/Assets/white_onyx_embossed.png; sourceTree = "<group>"; };
 		12D8C9F42683E27C001C6A2F /* capture_unet_class_map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = capture_unet_class_map.json; path = Pods/OnyxCamera/OnyxCamera/Assets/capture_unet_class_map.json; sourceTree = "<group>"; };
-		12D8C9F52683E27C001C6A2F /* capture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = capture.png; path = Pods/OnyxCamera/OnyxCamera/Assets/capture.png; sourceTree = "<group>"; };
 		12D8C9F62683E27C001C6A2F /* onyx_4f_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = onyx_4f_logo.png; path = Pods/OnyxCamera/OnyxCamera/Assets/onyx_4f_logo.png; sourceTree = "<group>"; };
-		12D8C9F72683E27C001C6A2F /* too_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = too_close.png; path = Pods/OnyxCamera/OnyxCamera/Assets/too_close.png; sourceTree = "<group>"; };
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
 		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
@@ -100,18 +100,20 @@
 			isa = PBXGroup;
 			children = (
 				12D8C9F42683E27C001C6A2F /* capture_unet_class_map.json */,
-				12D8C9F52683E27C001C6A2F /* capture.png */,
+				12B50F2D26B44570008CD6BB /* capture_unet_class_map.json */,
+				12B50F2C26B44570008CD6BB /* capturenet.tflite */,
+				12B50F2926B44570008CD6BB /* onyx_4f_logo_v2.png */,
+				12B50F2826B44570008CD6BB /* onyx_4f_logo_v2@2x.png */,
+				12B50F2726B44570008CD6BB /* onyx_4f_logo.png */,
+				12B50F2B26B44570008CD6BB /* qualitynet.tflite */,
+				12B50F2A26B44570008CD6BB /* white_onyx_embossed.png */,
 				12D8C9F62683E27C001C6A2F /* onyx_4f_logo.png */,
-				12D8C9F72683E27C001C6A2F /* too_close.png */,
-				12D8C9F22683E27C001C6A2F /* too_far.png */,
 				12D8C9F32683E27C001C6A2F /* white_onyx_embossed.png */,
 				12D8C9DB26811143001C6A2F /* onyx_4f_logo_v2.png */,
 				12D8C9E82683C079001C6A2F /* onyx_4f_logo_v2.png */,
 				12D8C9DA26811143001C6A2F /* onyx_4f_logo_v2@2x.png */,
-				12D8C9E62683C079001C6A2F /* capture_unet_nn_quant.tflite */,
 				12D8C9E72683C079001C6A2F /* onyx_4f_logo_v2@2x.png */,
 				12D8C9D62681112A001C6A2F /* capture_unet_class_map.json */,
-				12D8C9D72681112A001C6A2F /* capture_unet_nn_quant.tflite */,
 				9740EEB11CF90186004384FC /* Flutter */,
 				97C146F01CF9000F007C117D /* Runner */,
 				97C146EF1CF9000F007C117D /* Products */,
@@ -232,15 +234,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12D8C9F82683E27C001C6A2F /* too_far.png in Resources */,
-				12D8C9F92683E27C001C6A2F /* white_onyx_embossed.png in Resources */,
-				12D8C9FA2683E27C001C6A2F /* capture_unet_class_map.json in Resources */,
-				12D8C9FB2683E27C001C6A2F /* capture.png in Resources */,
 				12D8C9FC2683E27C001C6A2F /* onyx_4f_logo.png in Resources */,
-				12D8C9FD2683E27C001C6A2F /* too_close.png in Resources */,
-				12D8C9E92683C079001C6A2F /* capture_unet_nn_quant.tflite in Resources */,
 				12D8C9EA2683C079001C6A2F /* onyx_4f_logo_v2@2x.png in Resources */,
 				12D8C9EB2683C079001C6A2F /* onyx_4f_logo_v2.png in Resources */,
+				12D8C9F92683E27C001C6A2F /* white_onyx_embossed.png in Resources */,
+				12B50F2E26B44570008CD6BB /* qualitynet.tflite in Resources */,
+				12B50F2F26B44570008CD6BB /* capturenet.tflite in Resources */,
+				12D8C9FA2683E27C001C6A2F /* capture_unet_class_map.json in Resources */,
 				97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */,
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
