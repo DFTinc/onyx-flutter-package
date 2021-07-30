@@ -22,3 +22,8 @@
 ## 7.0.1
 
 * fixed issue with ios template
+
+## 7.1.0
+
+* updated ios to use onyx version 7.1.9
+* updated android to use onyx version 7.1.1
