@@ -1,9 +1,9 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=/Users/asu/flutter"
-export "FLUTTER_APPLICATION_PATH=/Users/asu/Documents/old/code/onyx/example"
+export "FLUTTER_ROOT=/usr/local/Caskroom/flutter/2.0.4/flutter"
+export "FLUTTER_APPLICATION_PATH=/Users/cdwheatley/1workspace/onyx-flutter-package/example"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
-export "FLUTTER_TARGET=/Users/asu/Documents/old/code/onyx/example/lib/main.dart"
+export "FLUTTER_TARGET=/Users/cdwheatley/1workspace/onyx-flutter-package/example/lib/main.dart"
 export "FLUTTER_BUILD_DIR=build"
 export "SYMROOT=${SOURCE_ROOT}/../build/ios"
 export "FLUTTER_BUILD_NAME=1.0.0"
@@ -12,4 +12,4 @@ export "DART_DEFINES=Zmx1dHRlci5pbnNwZWN0b3Iuc3RydWN0dXJlZEVycm9ycz10cnVl,RkxVVF
 export "DART_OBFUSCATION=false"
 export "TRACK_WIDGET_CREATION=true"
 export "TREE_SHAKE_ICONS=false"
-export "PACKAGE_CONFIG=/Users/asu/Documents/old/code/onyx/example/.dart_tool/package_config.json"
+export "PACKAGE_CONFIG=/Users/cdwheatley/1workspace/onyx-flutter-package/example/.dart_tool/package_config.json"

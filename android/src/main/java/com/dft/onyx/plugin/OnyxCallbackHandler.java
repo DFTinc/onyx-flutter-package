@@ -163,7 +163,7 @@ public class OnyxCallbackHandler implements MethodCallHandler {
                 .setReturnOnlyHighQualityImages(OnyxCallbackHelpers.getBoolValue(call, "isOnlyHighQualityImageReturned"))
                 .setReturnOnyxErrorOnNFIQScore5(OnyxCallbackHelpers.getBoolValue(call, "isErrorOnNFIQ5Score"))
                 .setEnableShutterSound(OnyxCallbackHelpers.getBoolValue(call, "isShutterSoundEnabled"))
-                .setUseCamera2PreviewStreaming(OnyxCallbackHelpers.getBoolValue(call, "isCamera2PreviewStreamingUsed"))
+                .setUseCamera2PreviewStreaming(OnyxCallbackHelpers.getBoolValue(call, "isCamera2PreviewStreamingUsed"), 15, 30)
                 .setImageRotation(OnyxCallbackHelpers.getIntValue(call, "imageRotation"))
                 .setCropSize(OnyxCallbackHelpers.getDoubleValue(call, "cropSizeWidth"), OnyxCallbackHelpers.getDoubleValue(call, "cropSizeHeight"))
                 .setCropFactor(OnyxCallbackHelpers.getFloatValue(call, "cropFactor"))

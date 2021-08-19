@@ -2,7 +2,7 @@ PODS:
   - Flutter (1.0.0)
   - onyx_plugin (0.0.1):
     - Flutter
-    - OnyxCamera (~> 7.1.9)
+    - OnyxCamera (= 7.1.9)
   - OnyxCamera (7.1.9):
     - OpenCV (= 3.4.5)
     - TensorFlowLiteObjC
@@ -34,7 +34,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
-  onyx_plugin: 43280b32ff0716e438aeb2613cb48cab995aec11
+  onyx_plugin: a2d91de8094a2396d269b657c77604d282de1a9a
   OnyxCamera: 021382b8d8580e346ca5f02f30ec79a0fc2e56f0
   OpenCV: 4171c39bdb17e65abda91fc8195d44cb347750f7
   TensorFlowLiteC: 9115580176f050caa70fea478dba3d5a75c612a4

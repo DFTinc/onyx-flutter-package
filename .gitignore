@@ -78,3 +78,4 @@
 *.user
 *.userosscache
 *.sln.docstates
+example/ios/Flutter/flutter_export_environment.sh
